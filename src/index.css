@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  /* Mendaftarkan Font Baru */
+  --font-playfair: "Playfair Display", serif;
+
+  /* Mendaftarkan Warna Baru */
+  --color-aldiora: #15503e;
+  --color-navFont: #82C2AA;
+
+  /* Footer */
+  --color-aldiora-soft: #82C2AA; 
+  --color-aldiora-dark: #0E4433; 
+}
+
+* {
+  outline: 1px solid red !important;
+}
