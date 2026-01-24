@@ -1,144 +1,171 @@
 import React from "react";
+import { Quote } from "lucide-react";
 import Footer from "../components/Footer";
 
 const About = () => {
   return (
-    // CONTAINER UTAMA (Snap Scroll Wrapper)
-    <div className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth no-scrollbar">
+    // CONTAINER UTAMA (Scroll Normal)
+    <div className="w-full overflow-x-hidden font-sans">
+      
       {/* =========================================
-          SECTION 1: HEADER
+          1. HEADER (EMPOWERING CONFIDENCE)
+          Background: Krem (#FAE3C3)
       ========================================== */}
-      <section className="h-screen w-full snap-start bg-[#FAE3C3] flex items-center justify-center px-6 relative">
-        <div className="container mx-auto max-w-4xl text-center">
-          <p className="text-sm md:text-base font-bold tracking-[0.3em] uppercase mb-6 text-gray-500 animate-fadeIn">
+      {/* Menggunakan min-h-[80vh] agar header cukup tinggi tapi tidak memaksa full screen */}
+      <section className="min-h-[80vh] w-full bg-[#FAE3C3] flex items-center justify-center px-6 relative py-24">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-bl-full filter blur-3xl"></div>
+        
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
+          <p className="text-sm md:text-base font-bold tracking-[0.3em] uppercase mb-6 text-[#15503E]/60 animate-fadeIn">
             About Aldiora
           </p>
           <h1 className="text-5xl md:text-7xl font-playfair font-bold text-[#15503E] mb-8 leading-tight">
             Empowering Confidence
           </h1>
-          <p className="text-[#15503E]/80 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+          <p className="text-[#15503E]/80 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-light">
             Kami percaya bahwa kecantikan sejati bermula dari rasa percaya diri.
             Dengan teknologi dermatologi terkini dan sentuhan personal yang
             hangat, kami hadir untuk merawat versi terbaik dari diri Anda.
           </p>
-
-          {/* Indikator Scroll (Bounce Icon) */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-            <svg
-              className="w-6 h-6 text-[#15503E]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </div>
         </div>
       </section>
 
       {/* =========================================
-          SECTION 2: FOUNDER STORY
+          2. QUOTE SECTION (FILOSOFI)
+          Background: Putih (#FFFFFF)
       ========================================== */}
-<section className="h-screen w-full snap-start flex flex-col md:flex-row bg-[#15503E]">
-        
-        {/* KIRI: Placeholder Foto Founder */}
-        {/* HAPUS 'relative' karena kita tidak butuh positioning untuk dekorasi lagi */}
-        <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center bg-[#15503E]">
+      <section className="w-full bg-white flex items-center justify-center px-6 py-24 relative">
+        <div className="container mx-auto max-w-4xl text-center">
+          <Quote size={48} className="text-[#15503E] mx-auto mb-8 opacity-20 rotate-180" />
           
-          {/* --- BAGIAN INI DIHAPUS (Dekorasi Sudut Atas Kanan) ---
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#FAE3C3] hidden md:block rounded-bl-[100px] z-0"></div> 
-          ------------------------------------------------------- */}
-
-          <div className="relative z-10 w-64 md:w-96 h-64 md:h-[500px]">
-            <div className="w-full h-full rounded-tl-[80px] rounded-br-[80px] rounded-tr-3xl rounded-bl-3xl overflow-hidden border-4 border-[#FAE3C3]/20 shadow-2xl bg-gray-300 flex items-center justify-center">
-              <span className="text-gray-500 font-bold">Founder Image</span>
-            </div>
-          </div>
+          <h3 className="text-2xl md:text-4xl font-playfair leading-relaxed text-[#15503E] font-medium">
+            <span className="font-bold text-[#15503E]">Empowering Confidence</span> means nurturing your inner beauty 
+            through balanced nutrition, radiant skin, and natural aesthetics that bring out the 
+            <span className="font-bold border-b-2 border-[#FAE3C3]"> best version of you.</span>
+          </h3>
         </div>
+      </section>
 
-        {/* KANAN: Text */}
-        {/* HAPUS 'md:rounded-tl-[100px]' agar sudutnya lurus siku-siku */}
-        <div className="w-full md:w-1/2 h-1/2 md:h-full bg-[#ffffff] flex items-center justify-center p-8 md:p-20">
-          <div className="max-w-lg text-left">
-            <p className="text-[#15503E] font-bold tracking-widest uppercase mb-2 text-sm">
-              The Founder
-            </p>
-            <h2 className="text-4xl md:text-6xl font-playfair font-bold mb-6 text-[#15503E]">
-              Dr. Anja Bunga
-            </h2>
-            <blockquote className="text-[#15503E]/80 mb-6 leading-relaxed italic border-l-4 border-[#15503E] pl-4 text-sm md:text-lg">
-              "Kecantikan bukan tentang mengubah siapa diri kita, tapi tentang
-              merawat apa yang sudah kita miliki."
-            </blockquote>
-            <p className="text-[#15503E]/70 leading-relaxed text-sm md:text-base hidden md:block">
-              Berawal dari mimpi sederhana untuk menghadirkan perawatan kelas
-              dunia di Jakarta Selatan, kini Aldiora menjadi rumah bagi ribuan
-              pasien.
-            </p>
+      {/* =========================================
+          3. VISION & MISSION
+          Background: Hijau Tua (#15503E)
+      ========================================== */}
+      <section className="w-full bg-[#15503E] px-6 py-24 relative overflow-hidden">
+        {/* Dekorasi Background */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <div className="absolute -right-20 bottom-[-50px] w-96 h-96 bg-[#FAE3C3]/5 rounded-full blur-[80px]"></div>
+
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            
+            {/* VISION */}
+            <div className="flex flex-col space-y-6">
+              <div className="inline-block border-b-2 border-[#FAE3C3] pb-2 mb-2 w-fit">
+                <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white">
+                  Vision
+                </h2>
+              </div>
+              <p className="text-[#FAE3C3]/90 text-lg leading-relaxed font-light">
+                To inspire transformation from within through holistic care that radiates health, beauty, and confidence.
+              </p>
+            </div>
+
+            {/* MISSION */}
+            <div className="flex flex-col space-y-6">
+              <div className="inline-block border-b-2 border-[#FAE3C3] pb-2 mb-2 w-fit">
+                 <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white">
+                  Mission
+                </h2>
+              </div>
+              <ul className="space-y-4 text-white/80 font-light leading-relaxed">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#FAE3C3] flex-shrink-0"></span>
+                  <span>To deliver personalized, evidence-based nutrition, skin, and aesthetic treatments.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                   <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#FAE3C3] flex-shrink-0"></span>
+                   <span>To create a refined, comfortable, and meaningful selfcare experience.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                   <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#FAE3C3] flex-shrink-0"></span>
+                   <span>To help individuals feel healthier, more beautiful, and confident in their own skin.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                   <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#FAE3C3] flex-shrink-0"></span>
+                   <span>To nurture a supportive, empowering, and positive community.</span>
+                </li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* =========================================
-          SECTION 3: DOCTORS
+          4. MEET OUR EXPERTS
+          Background: Krem (#FAE3C3)
       ========================================== */}
-      <section className="h-screen w-full snap-start bg-[#ffffff] flex flex-col justify-center px-6 pt-16 md:pt-0">
-        <div className="container mx-auto h-full flex flex-col justify-center">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#15503E]">
+      <section className="w-full bg-[#FAE3C3] flex flex-col justify-center px-6 py-24 relative overflow-hidden">
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-playfair font-bold text-[#15503E]">
               Meet Our Experts
             </h2>
+            <p className="text-[#15503E]/70 mt-4 max-w-xl mx-auto font-light">
+              Ditangani langsung oleh dokter spesialis berpengalaman untuk hasil yang aman dan natural.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 h-[60vh] md:h-auto items-center">
-            {/* Panggil Card tanpa props image */}
-            <DoctorCard name="Dr. Cameron" specialist="Spesialis Kulit" />
-            <DoctorCard name="Dr. Jane Cooper" specialist="Estetika Medis" />
-            <DoctorCard name="Dr. Darrell" specialist="Dermatologi" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+            <DoctorCard name="Dr. Cameron Will" specialist="Spesialis Kulit" variant="light" />
+            <DoctorCard name="Dr. Jane Cooper" specialist="Estetika Medis" variant="light" />
+            <DoctorCard name="Dr. Darrell Steward" specialist="Dermatologi" variant="light" />
           </div>
         </div>
       </section>
 
       {/* =========================================
-          SECTION 4: CLINIC GALLERY (SUDAH DI-FIX BIAR GA NABRAK)
+          5. OUR FACILITIES
+          Background: Putih Bersih (#FFFFFF)
       ========================================== */}
-      {/* FIX: Gunakan flex flex-col agar container bisa mengatur tinggi anak-anaknya */}
-      <section className="h-screen w-full snap-start bg-[#ffffff] flex flex-col justify-center px-6 py-10 md:py-0">
-        <div className="container mx-auto h-full flex flex-col justify-center">
-          {/* JUDUL */}
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-center text-[#15503E] mb-6 md:mb-10 flex-shrink-0">
-            Our Facilities
-          </h2>
+      <section className="w-full bg-white flex flex-col justify-center px-6 py-24 relative">
+        <div className="container mx-auto">
+          
+          {/* Header Section */}
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-[#15503E]/10 pb-6">
+             <div>
+                <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#15503E] mb-2">
+                  Our Facilities
+                </h2>
+                <p className="text-[#15503E]/60">Teknologi modern dalam kenyamanan premium.</p>
+             </div>
+             <div className="hidden md:block text-[#15503E]/40 text-sm font-bold tracking-widest uppercase">
+                Explore The Clinic
+             </div>
+          </div>
 
-          {/* GRID:
-              FIX: Gunakan 'flex-grow h-0 min-h-0'.
-              Ini memaksa grid mengisi SISA ruang kosong, jadi tidak akan nabrak footer.
-          */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl mx-auto flex-grow h-0 min-h-0 pb-4 md:pb-8">
-            {/* Placeholder Kiri */}
-            <div className="h-full w-full overflow-hidden rounded-3xl relative group shadow-xl bg-gray-300 flex items-center justify-center">
-              <span className="text-gray-500 font-bold">
-                Main Facility Image
-              </span>
-              <div className="absolute bottom-4 left-6 bg-white/90 px-4 py-2 rounded-full text-[#15503E] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+          {/* GRID GALLERY - Kembali menggunakan tinggi fix (h-[600px]) untuk layout normal */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-7xl mx-auto">
+            
+            {/* Kiri */}
+            <div className="h-[400px] md:h-[600px] w-full overflow-hidden rounded-[2rem] relative group shadow-lg bg-gray-200 flex items-center justify-center border border-gray-100">
+               <span className="text-gray-400 font-bold tracking-widest">MAIN FACILITY</span>
+               <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-6 py-3 rounded-full text-[#15503E] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                 Reception Area
               </div>
             </div>
 
-            {/* Placeholder Kanan (Grid Kecil) */}
-            <div className="hidden md:grid grid-rows-2 gap-4 h-full">
-              <div className="rounded-3xl overflow-hidden h-full relative group shadow-xl bg-gray-300 flex items-center justify-center">
-                <span className="text-gray-500 font-bold">Room 1</span>
+            {/* Kanan */}
+            <div className="grid grid-rows-2 gap-6 h-[400px] md:h-[600px]">
+              <div className="rounded-[2rem] overflow-hidden h-full relative group shadow-lg bg-gray-200 flex items-center justify-center border border-gray-100">
+                <span className="text-gray-400 font-bold tracking-widest">TREATMENT ROOM</span>
               </div>
-              <div className="grid grid-cols-2 gap-4 h-full">
-                <div className="rounded-3xl overflow-hidden relative group shadow-xl bg-gray-300 flex items-center justify-center">
-                  <span className="text-gray-500 font-bold">Tool 1</span>
+              <div className="grid grid-cols-2 gap-6 h-full">
+                <div className="rounded-[2rem] overflow-hidden relative group shadow-lg bg-gray-200 flex items-center justify-center border border-gray-100">
+                   <span className="text-gray-400 font-bold text-xs tracking-widest">TOOL 1</span>
                 </div>
-                <div className="rounded-3xl overflow-hidden relative group shadow-xl bg-gray-300 flex items-center justify-center">
-                  <span className="text-gray-500 font-bold">Tool 2</span>
+                <div className="rounded-[2rem] overflow-hidden relative group shadow-lg bg-gray-200 flex items-center justify-center border border-gray-100">
+                   <span className="text-gray-400 font-bold text-xs tracking-widest">TOOL 2</span>
                 </div>
               </div>
             </div>
@@ -147,28 +174,38 @@ const About = () => {
       </section>
 
       {/* =========================================
-          SECTION 5: FOOTER (Snap Terakhir)
+          6. FOOTER
       ========================================== */}
-      <div className="snap-start w-full">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };
 
-// Component Doctor Card (Versi Zonk/Placeholder)
-const DoctorCard = ({ name, specialist }) => {
+// Component Doctor Card
+const DoctorCard = ({ name, specialist, variant = "light" }) => {
+  const isDark = variant === "dark";
+  
   return (
-    <div className="flex flex-col text-left group bg-white/40 p-4 rounded-3xl border border-[#15503E]/10 hover:bg-white hover:shadow-2xl transition-all duration-500 h-full justify-end">
+    <div className={`flex flex-col text-left group p-6 rounded-[2rem] border transition-all duration-500 h-[400px] justify-end hover:-translate-y-2
+      ${isDark 
+        ? "bg-white/5 border-white/10 hover:bg-[#FAE3C3] hover:border-[#FAE3C3]" 
+        : "bg-white/40 border-[#15503E]/10 hover:bg-white hover:shadow-2xl"
+      }
+    `}>
       {/* Placeholder Image */}
-      <div className="overflow-hidden rounded-2xl h-[250px] md:h-[300px] w-full mb-4 bg-gray-300 flex items-center justify-center">
-        <span className="text-gray-500 font-bold text-sm">Doctor Photo</span>
+      <div className="overflow-hidden rounded-3xl h-full w-full mb-6 bg-gray-300 flex items-center justify-center relative">
+         <span className="text-gray-500 font-bold text-sm z-10">PHOTO</span>
+         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-50"></div>
       </div>
 
-      <h3 className="text-2xl font-playfair font-bold text-[#15503E]">
+      <h3 className={`text-2xl font-playfair font-bold transition-colors duration-300
+        ${isDark ? "text-[#FAE3C3] group-hover:text-[#15503E]" : "text-[#15503E]"}
+      `}>
         {name}
       </h3>
-      <p className="text-[#15503E]/60 font-bold text-xs uppercase tracking-widest">
+      <p className={`font-bold text-xs uppercase tracking-widest mt-1 transition-colors duration-300
+        ${isDark ? "text-white/60 group-hover:text-[#15503E]/70" : "text-[#15503E]/60"}
+      `}>
         {specialist}
       </p>
     </div>
