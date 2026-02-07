@@ -22,7 +22,8 @@ const LoadingScreen = () => (
 
 function App() {
   return (
-    <BrowserRouter>
+    // Gunakan HashRouter di sini
+    <HashRouter>
       <Routes>
         {/* Layout TIDAK perlu di-lazy load agar Navbar/Footer muncul duluan (UX lebih bagus) */}
         <Route path="/" element={<Layout />}>
@@ -61,7 +62,7 @@ function App() {
           
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
