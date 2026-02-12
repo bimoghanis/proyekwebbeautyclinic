@@ -133,7 +133,7 @@ const Footer = () => {
                   <Phone size={16} className="text-yellow-200" />
                   <span className="font-semibold">Call Us</span>
                 </div>
-                <span className="text-white/70">0811-2233-4455</span>
+                <span className="text-white/70">0812-2631-6899</span>
               </li>
 
               <li className="flex flex-col md:items-end gap-1">
