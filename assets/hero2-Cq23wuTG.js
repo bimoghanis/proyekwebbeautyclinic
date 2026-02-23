@@ -1,1 +1,0 @@
-var e=`/proyekwebbeautyclinic/assets/hero2-f6G6rw3m.webp`;export{e as t};
