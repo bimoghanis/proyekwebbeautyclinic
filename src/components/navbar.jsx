@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // 1. Import useLocation
 import { Menu, X } from "lucide-react";
 // 1. IMPORT LOGO
 import logoImage from "../assets/Logo2.png";
@@ -7,6 +7,12 @@ import logoImage from "../assets/Logo2.png";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  
+  // 2. Inisialisasi useLocation untuk mengambil path URL saat ini
+  const location = useLocation();
+
+  // 3. Fungsi pembantu untuk cek apakah path sesuai dengan URL saat ini
+  const isActive = (path) => location.pathname === path;
 
   // Logic Scroll
   useEffect(() => {
@@ -30,24 +36,19 @@ const Navbar = () => {
             : "bg-[#15503E] border-transparent py-2"
         }`}>
         <div className="container mx-auto px-6 md:px-12 lg:px-24 flex justify-between items-center text-[#FAE3C3]">
-          {/* 1. LOGO (MENGGUNAKAN IMAGE MASKING) */}
+          {/* 1. LOGO */}
           <Link
             to="/"
             className="z-50 relative flex items-center"
             onClick={() => setIsOpen(false)}>
-            {/* TEKNIK CSS MASKING:
-                Div ini background-nya warna krem (#FAE3C3).
-                Lalu kita 'potong' div ini sesuai bentuk Logo2.png.
-                Hasilnya: Logo berbentuk gambar tapi warnanya bisa diatur lewat CSS.
-            */}
             <div
-              className="bg-[#FAE3C3] h-12 w-12" // Ubah h-12 w-12 jika ingin memperbesar/memperkecil logo
+              className="bg-[#FAE3C3] h-12 w-12"
               style={{
                 maskImage: `url(${logoImage})`,
                 maskSize: "contain",
                 maskRepeat: "no-repeat",
-                maskPosition: "center left", // Logo rata kiri
-                WebkitMaskImage: `url(${logoImage})`, // Support Safari/Chrome
+                maskPosition: "center left",
+                WebkitMaskImage: `url(${logoImage})`,
                 WebkitMaskSize: "contain",
                 WebkitMaskRepeat: "no-repeat",
                 WebkitMaskPosition: "center left",
@@ -55,30 +56,37 @@ const Navbar = () => {
             />
           </Link>
 
-          {/* 2. MENU DESKTOP (Hidden di HP) */}
+          {/* 2. MENU DESKTOP */}
           <div className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest">
-            <Link to="/" className="hover:text-white transition">
+            {/* Gunakan isActive untuk mengubah warna teks jika sedang di halaman tersebut */}
+            <Link 
+              to="/" 
+              className={`${isActive("/") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}
+            >
               Home
             </Link>
-            <Link to="/konsultasi" className="hover:text-white transition">
+            <Link 
+              to="/konsultasi" 
+              className={`${isActive("/konsultasi") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}
+            >
               Consultation
             </Link>
-            <Link to="/about" className="hover:text-white transition">
+            <Link 
+              to="/about" 
+              className={`${isActive("/about") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}
+            >
               About
             </Link>
-            {/* <Link to="/contact" className="hover:text-white transition">
-              Contact
-            </Link> */}
           </div>
 
-          {/* 3. TOMBOL HAMBURGER (Visible di HP) */}
+          {/* 3. TOMBOL HAMBURGER */}
           <button
             className="md:hidden z-50 text-[#FAE3C3] focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
 
-          {/* 4. MENU MOBILE DROPDOWN (Overlay) */}
+          {/* 4. MENU MOBILE DROPDOWN */}
           <div
             className={`fixed inset-0 bg-[#15503E] flex flex-col items-center justify-center gap-8 text-xl font-bold uppercase tracking-widest transition-transform duration-500 ease-in-out md:hidden ${
               isOpen
@@ -93,8 +101,12 @@ const Navbar = () => {
                 <Link
                   key={item}
                   to={path}
-                  onClick={() => setIsOpen(false)} // Tutup menu setelah klik
-                  className="text-[#FAE3C3] hover:text-white transition-transform hover:scale-110">
+                  onClick={() => setIsOpen(false)}
+                  // Terapkan hal yang sama untuk versi mobile, bisa ditambah scale-110 juga jika aktif
+                  className={`${
+                    isActive(path) ? "text-white scale-110" : "text-[#FAE3C3]"
+                  } hover:text-white transition-transform hover:scale-110`}
+                >
                   {item}
                 </Link>
               );

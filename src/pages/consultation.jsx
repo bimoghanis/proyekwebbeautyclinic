@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 import { SERVICES_DATA } from "../data/services"; // Import data terpusat
 
 const Consultation = () => {
@@ -15,7 +15,7 @@ const Consultation = () => {
 
         <div className="container mx-auto text-center relative z-10 max-w-4xl">
           <p className="text-sm md:text-base font-bold tracking-[0.3em] uppercase mb-4 animate-fadeIn">
-            Treatment Menu
+            Treatments Menu
           </p>
           <h1 className="text-5xl md:text-8xl font-playfair font-medium mb-8 leading-tight">
             Curated <br /> Treatments

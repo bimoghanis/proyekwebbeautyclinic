@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Pastikan ini di-import
 import {
   ArrowRight,
   ArrowLeft,
@@ -13,19 +13,20 @@ import {
 import hero1 from "../assets/hero1.webp";
 import hero2 from "../assets/hero2.webp";
 import hero3 from "../assets/hero3.webp";
+import doctorConsul from "../assets/doctorConsul.webp";
+import bodyTreat from "../assets/bodyTreat.webp";
+import peelingTreat from "../assets/peelingTreat.webp";
+import laserTreat from "../assets/laserTreat.webp";
+import facialTreat from "../assets/facialTreat.webp";
 
-// Gambar dummy (TETAP)
-const treatmentImg1 =
-  "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop";
-const treatmentImg2 =
-  "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop";
-const treatmentImg3 =
-  "https://images.unsplash.com/photo-1512678080530-7760d81faba6?q=80&w=800&auto=format&fit=crop";
-
-// --- KOMPONEN KARTU LUXURY (TETAP) ---
+// --- KOMPONEN KARTU LUXURY (SUDAH DIPERBAIKI) ---
+// Perubahan: Menggunakan <Link> agar bisa diklik menuju halaman detail
 const LuxuryServiceCard = ({ data }) => {
   return (
-    <div className="group relative w-full h-[500px] rounded-[2.5rem] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 bg-gray-100">
+    <Link 
+      to={`/konsultasi/${data.slug}`} // <-- INI KUNCI UTAMANYA (Menggunakan slug)
+      className="group relative w-full h-[500px] rounded-[2.5rem] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 bg-gray-100 block"
+    >
       <img
         src={data.image}
         alt={data.title}
@@ -49,7 +50,8 @@ const LuxuryServiceCard = ({ data }) => {
           {data.features.slice(0, 2).map((feature, idx) => (
             <span
               key={idx}
-              className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider text-white/70 border border-white/20 px-3 py-1 rounded-full">
+              className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider text-white/70 border border-white/20 px-3 py-1 rounded-full"
+            >
               <Star size={10} className="fill-[#FAE3C3] text-[#FAE3C3]" />{" "}
               {feature}
             </span>
@@ -64,7 +66,7 @@ const LuxuryServiceCard = ({ data }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -85,60 +87,57 @@ const Dashboard = () => {
   const treatments = [
     {
       id: 1,
-      image: treatmentImg1,
+      slug: "doctor-consultation",
+      image: doctorConsul,
       category: "Treatment Profesional",
-      title: "Facial, Laser, etc",
+      title: "Doctor Consultation",
       description:
-        "Revitalize your skin with comprehensive clinical treatments by certified dermatologists.",
+        "Konsultasi profesional untuk analisis kondisi kulit yang tepat.",
       features: [
-        "Expert Dermatologists",
-        "Advanced Technology",
-        "Personalized Care",
+
       ],
     },
     {
       id: 2,
-      image: treatmentImg2,
+      slug: "peeling-treatments",
+      image: peelingTreat,
       category: "Aesthetic Care",
-      title: "Botox, Fillers, etc",
+      title: "Peeling Treatment",
       description:
-        "Enhance your natural beauty with aesthetic procedures designed to rejuvenate safely.",
+        "Eksfoliasi dan pencerahan untuk mengangkat sel kulit mati.",
       features: [
-        "Certified Specialists",
-        "FDA Approved Products",
-        "Natural Looking Results",
+
       ],
     },
     {
       id: 3,
-      image: treatmentImg3,
-      category: "Skin Rejuvenation",
-      title: "Peeling & Glow",
+      slug: "laser-treatments",
+      image: laserTreat,
+      category: "Aesthetic Care",
+      title: "Laser Treatment",
       description:
-        "Get that perfect glow with our signature chemical peels and hydration therapy.",
-      features: [
-        "Instant Glow",
-        "Dead Skin Removal",
-        "Safe for Sensitive Skin",
-      ],
+        "Teknologi laser canggih untuk flek, bekas jerawat, dan pori-pori.",
+      features: [],
     },
     {
       id: 4,
-      image: treatmentImg1,
+      slug: "body-treatments",
+      image: bodyTreat,
       category: "Body Wellness",
-      title: "Slimming & Firming",
+      title: "Body Treatment",
       description:
-        "Non-invasive body contouring treatments to help you achieve your desired shape.",
-      features: ["No Downtime", "Proven Results", "Comfortable Process"],
+        "Pengencangan wajah & tubuh non-invasif tanpa downtime.",
+      features: [],
     },
-    {
+ {
       id: 5,
-      image: treatmentImg2,
-      category: "Hair Treatment",
-      title: "Hair Loss Solution",
+      slug: "prp-microneedling",
+      image: facialTreat,
+      category: "Facial Treatment",
+      title: "PRP Microneedling", 
       description:
-        "Advanced PRP and mesotherapy specifically designed for hair restoration.",
-      features: ["Stimulate Growth", "Strengthen Roots", "Clinical Approach"],
+        "Regenerasi kulit alami menggunakan plasma darah dan microneedling.",
+      features: [],
     },
   ];
 
@@ -192,7 +191,8 @@ const Dashboard = () => {
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 rounded-bl-full filter blur-3xl z-0"></div>
 
         <div
-          className={`${commonContainerClass} py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20 relative z-10`}>
+          className={`${commonContainerClass} py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20 relative z-10`}
+        >
           <div className="flex-1 max-w-xl text-center md:text-left animate-fadeIn">
             <p className="text-sm font-bold tracking-[0.3em] uppercase mb-4 text-[#15503E]/60">
               Welcome to Aldiora
@@ -213,12 +213,13 @@ const Dashboard = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Link
                 to="/konsultasi"
-                className="bg-[#15503E] text-[#FAE3C3] px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-[#0f3a2d] hover:scale-105 transition-all duration-300 shadow-xl inline-block">
+                className="bg-[#15503E] text-[#FAE3C3] px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-[#0f3a2d] hover:scale-105 transition-all duration-300 shadow-xl inline-block"
+              >
                 Consult Now
               </Link>
-              <button className="bg-transparent border border-[#15503E] text-[#15503E] px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-[#15503E] hover:text-white transition-all duration-300">
+              <a href="https://maps.app.goo.gl/9TbhAQwdPTDGuDw58" className="bg-transparent border border-[#15503E] text-[#15503E] px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-[#15503E] hover:text-white transition-all duration-300">
                 Visit Us
-              </button>
+              </a>
             </div>
           </div>
 
@@ -258,40 +259,6 @@ const Dashboard = () => {
         </div>
       </section>
 
-      {/* 2. SECTION PROMO (HIDDEN - URUTAN KE-2) */}
-      {/* UNTUK MENAMPILKAN: Hapus tanda komentar pembuka dan penutup.
-       */}
-      {/* <section className="py-20 bg-[#15503E] text-[#FAE3C3] relative overflow-hidden">
-         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-         <div className={`${commonContainerClass} relative z-10`}>
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-               <div className="max-w-2xl">
-                  <div className="inline-flex items-center gap-2 border border-[#FAE3C3]/30 rounded-full px-4 py-1 mb-4">
-                     <Tag size={14} /> <span className="text-xs font-bold tracking-widest uppercase">Special Offer</span>
-                  </div>
-                  <h2 className="text-3xl md:text-5xl font-playfair font-bold mb-4 leading-tight">
-                     Get 20% Off for <br/> First Time Consultation
-                  </h2>
-                  <p className="text-[#FAE3C3]/80 text-lg font-light mb-8">
-                     Nikmati promo spesial untuk pelanggan baru. Berlaku untuk semua jenis perawatan wajah dan tubuh.
-                  </p>
-                  <Link to="/konsultasi" className="bg-[#FAE3C3] text-[#15503E] px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white transition-colors shadow-lg">
-                     Claim Offer
-                  </Link>
-               </div>
-               
-               <div className="hidden md:block">
-                  <div className="w-64 h-64 border-4 border-[#FAE3C3]/20 rounded-full flex items-center justify-center relative animate-pulse">
-                     <div className="text-center">
-                        <p className="text-sm uppercase tracking-widest mb-1">Promo Code</p>
-                        <p className="text-3xl font-bold font-playfair">ALDIORA20</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>  */}
-
       {/* 3. SECTION TREATMENT */}
       <section className="w-full py-24 flex flex-col justify-center bg-white">
         <div className={commonContainerClass}>
@@ -311,12 +278,14 @@ const Dashboard = () => {
             <div className="flex gap-4">
               <button
                 onClick={slideLeft}
-                className="p-4 rounded-full border border-[#15503E]/20 text-[#15503E] hover:bg-[#15503E] hover:text-[#FAE3C3] transition-all duration-300 active:scale-95 flex items-center justify-center">
+                className="p-4 rounded-full border border-[#15503E]/20 text-[#15503E] hover:bg-[#15503E] hover:text-[#FAE3C3] transition-all duration-300 active:scale-95 flex items-center justify-center"
+              >
                 <ArrowLeft size={24} />
               </button>
               <button
                 onClick={slideRight}
-                className="p-4 rounded-full border border-[#15503E]/20 text-[#15503E] hover:bg-[#15503E] hover:text-[#FAE3C3] transition-all duration-300 active:scale-95 flex items-center justify-center">
+                className="p-4 rounded-full border border-[#15503E]/20 text-[#15503E] hover:bg-[#15503E] hover:text-[#FAE3C3] transition-all duration-300 active:scale-95 flex items-center justify-center"
+              >
                 <ArrowRight size={24} />
               </button>
             </div>
@@ -324,11 +293,13 @@ const Dashboard = () => {
 
           <div
             ref={sliderRef}
-            className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-12">
+            className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-12"
+          >
             {treatments.map((item) => (
               <div
                 key={item.id}
-                className="snap-center md:snap-start min-w-[85%] md:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] flex-shrink-0">
+                className="snap-center md:snap-start min-w-[85%] md:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] flex-shrink-0"
+              >
                 <LuxuryServiceCard data={item} />
               </div>
             ))}
@@ -337,7 +308,8 @@ const Dashboard = () => {
           <div className="mt-8 flex justify-center">
             <Link
               to="/konsultasi"
-              className="group relative inline-flex items-center gap-3 bg-transparent border-2 border-[#15503E] text-[#15503E] px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest overflow-hidden hover:text-[#FAE3C3] transition-colors duration-300">
+              className="group relative inline-flex items-center gap-3 bg-transparent border-2 border-[#15503E] text-[#15503E] px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest overflow-hidden hover:text-[#FAE3C3] transition-colors duration-300"
+            >
               <span className="absolute inset-0 bg-[#15503E] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out -z-10"></span>
               <span>View All Treatments</span>
               <CalendarCheck
@@ -349,8 +321,7 @@ const Dashboard = () => {
         </div>
       </section>
 
-      {/* 4. SECTION KEUNGGULAN (PINDAH SINI) */}
-      {/* Saya beri background agak beda (F8FCFA) biar ada pemisah visual dari section treatment */}
+      {/* 4. SECTION KEUNGGULAN */}
       <section className="bg-[#F8FCFA] py-24">
         <div className={`${commonContainerClass}`}>
           <div className="text-center mb-16">
@@ -366,7 +337,8 @@ const Dashboard = () => {
             {advantages.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center p-8 bg-white rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 group cursor-default border border-[#15503E]/5">
+                className="flex flex-col items-center text-center p-8 bg-white rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 group cursor-default border border-[#15503E]/5"
+              >
                 <div className="w-20 h-20 rounded-full bg-[#E5F0EB] flex items-center justify-center text-[#15503E] mb-6 group-hover:scale-110 group-hover:bg-[#15503E] group-hover:text-[#FAE3C3] transition-all duration-300">
                   {item.icon}
                 </div>
@@ -382,7 +354,7 @@ const Dashboard = () => {
         </div>
       </section>
 
-      {/* 5. SECTION LOCATION (PALING BAWAH) */}
+      {/* 5. SECTION LOCATION */}
       <section className="bg-[#15503E] w-full py-24 text-[#FAE3C3]">
         <div className={`${commonContainerClass} flex flex-col items-center`}>
           <div className="mb-12 text-center max-w-2xl">
@@ -407,7 +379,8 @@ const Dashboard = () => {
               }}
               allowFullScreen=""
               loading="lazy"
-              className="group-hover:filter-none transition-all duration-700"></iframe>
+              className="group-hover:filter-none transition-all duration-700"
+            ></iframe>
 
             <div className="absolute bottom-6 left-6 bg-white/90 text-[#15503E] px-6 py-3 rounded-2xl shadow-lg backdrop-blur-sm pointer-events-none">
               <p className="font-bold text-sm">Aldiora Clinic</p>

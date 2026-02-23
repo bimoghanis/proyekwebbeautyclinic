@@ -35,14 +35,9 @@ const Footer = () => {
             <div className="flex items-center gap-2 mt-2">
               <a
                 href="https://www.instagram.com/aldioraclinic/"
-                className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition backdrop-blur-sm">
+                className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition backdrop-blur-sm"
+              >
                 <Instagram size={18} />
-              </a>
-              {/* Contoh Icon Lain */}
-              <a
-                href="#"
-                className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition backdrop-blur-sm">
-                <Mail size={18} />
               </a>
             </div>
           </div>
@@ -51,7 +46,8 @@ const Footer = () => {
           <div className="flex flex-col items-start md:items-center w-full md:w-auto">
             <button
               onClick={() => toggleSection("quickLinks")}
-              className="flex justify-between items-center w-full md:w-auto py-2 md:py-0 font-bold uppercase tracking-widest text-xs focus:outline-none border-b border-white/10 md:border-none md:mb-6 text-left text-yellow-200">
+              className="flex justify-between items-center w-full md:w-auto py-2 md:py-0 font-bold uppercase tracking-widest text-xs focus:outline-none border-b border-white/10 md:border-none md:mb-6 text-left text-yellow-200"
+            >
               <span>Quick Links</span>
               <ChevronDown
                 size={16}
@@ -68,29 +64,24 @@ const Footer = () => {
                   ? "max-h-40 opacity-100 mt-2"
                   : "max-h-0 opacity-0 md:max-h-none md:opacity-100 md:mt-0"
               }
-            `}>
+            `}
+            >
               <li>
                 <Link to="/" className="hover:text-yellow-200 transition">
-                  Product
+                  Home
                 </Link>
               </li>
               <li>
                 <Link
                   to="/konsultasi"
-                  className="hover:text-yellow-200 transition">
+                  className="hover:text-yellow-200 transition"
+                >
                   Consul
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="hover:text-yellow-200 transition">
                   About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="hover:text-yellow-200 transition">
-                  Contact Us
                 </Link>
               </li>
             </ul>
@@ -100,7 +91,8 @@ const Footer = () => {
           <div className="flex flex-col items-start md:items-end w-full md:w-auto md:text-right">
             <button
               onClick={() => toggleSection("contact")}
-              className="flex justify-between items-center w-full md:w-auto py-2 md:py-0 font-bold uppercase tracking-widest text-xs focus:outline-none border-b border-white/10 md:border-none md:mb-6 text-left text-yellow-200">
+              className="flex justify-between items-center w-full md:w-auto py-2 md:py-0 font-bold uppercase tracking-widest text-xs focus:outline-none border-b border-white/10 md:border-none md:mb-6 text-left text-yellow-200"
+            >
               <span>Contact</span>
               <ChevronDown
                 size={16}
@@ -117,7 +109,8 @@ const Footer = () => {
                   ? "max-h-60 opacity-100 mt-2"
                   : "max-h-0 opacity-0 md:max-h-none md:opacity-100 md:mt-0"
               }
-            `}>
+            `}
+            >
               <li className="flex flex-col md:items-end gap-1">
                 <div className="flex items-center gap-2 md:flex-row-reverse justify-start md:justify-end">
                   <MapPin size={16} className="text-yellow-200 shrink-0" />
@@ -141,7 +134,7 @@ const Footer = () => {
                   <Mail size={16} className="text-yellow-200" />
                   <span className="font-semibold">Email Us</span>
                 </div>
-                <span className="text-white/70">care@aldioraclinic.com</span>
+                <span className="text-white/70">Aldioraclinic@gmail.com</span>
               </li>
             </ul>
           </div>
