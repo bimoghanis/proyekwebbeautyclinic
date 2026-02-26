@@ -23,10 +23,9 @@ import facialTreat from "../assets/facialTreat.webp";
 // Perubahan: Menggunakan <Link> agar bisa diklik menuju halaman detail
 const LuxuryServiceCard = ({ data }) => {
   return (
-    <Link 
+    <Link
       to={`/konsultasi/${data.slug}`} // <-- INI KUNCI UTAMANYA (Menggunakan slug)
-      className="group relative w-full h-[500px] rounded-[2.5rem] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 bg-gray-100 block"
-    >
+      className="group relative w-full h-[500px] rounded-[2.5rem] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 bg-gray-100 block">
       <img
         src={data.image}
         alt={data.title}
@@ -50,8 +49,7 @@ const LuxuryServiceCard = ({ data }) => {
           {data.features.slice(0, 2).map((feature, idx) => (
             <span
               key={idx}
-              className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider text-white/70 border border-white/20 px-3 py-1 rounded-full"
-            >
+              className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider text-white/70 border border-white/20 px-3 py-1 rounded-full">
               <Star size={10} className="fill-[#FAE3C3] text-[#FAE3C3]" />{" "}
               {feature}
             </span>
@@ -89,13 +87,11 @@ const Dashboard = () => {
       id: 1,
       slug: "doctor-consultation",
       image: doctorConsul,
-      category: "Treatment Profesional",
+      category: "Professional Treatment",
       title: "Doctor Consultation",
       description:
-        "Konsultasi profesional untuk analisis kondisi kulit yang tepat.",
-      features: [
-
-      ],
+        "Professional consultation for accurate skin condition analysis.",
+      features: [],
     },
     {
       id: 2,
@@ -104,10 +100,8 @@ const Dashboard = () => {
       category: "Aesthetic Care",
       title: "Peeling Treatment",
       description:
-        "Eksfoliasi dan pencerahan untuk mengangkat sel kulit mati.",
-      features: [
-
-      ],
+        "Exfoliation and brightening treatment to remove dead skin cells.",
+      features: [],
     },
     {
       id: 3,
@@ -116,7 +110,7 @@ const Dashboard = () => {
       category: "Aesthetic Care",
       title: "Laser Treatment",
       description:
-        "Teknologi laser canggih untuk flek, bekas jerawat, dan pori-pori.",
+        "Advanced laser technology for pigmentation, acne scars, and pores.",
       features: [],
     },
     {
@@ -125,18 +119,17 @@ const Dashboard = () => {
       image: bodyTreat,
       category: "Body Wellness",
       title: "Body Treatment",
-      description:
-        "Pengencangan wajah & tubuh non-invasif tanpa downtime.",
+      description: "Non-invasive face and body tightening with no downtime.",
       features: [],
     },
- {
+    {
       id: 5,
       slug: "prp-microneedling",
       image: facialTreat,
       category: "Facial Treatment",
-      title: "PRP Microneedling", 
+      title: "PRP Microneedling",
       description:
-        "Regenerasi kulit alami menggunakan plasma darah dan microneedling.",
+        "Natural skin regeneration using platelet-rich plasma and microneedling.",
       features: [],
     },
   ];
@@ -145,18 +138,18 @@ const Dashboard = () => {
   const advantages = [
     {
       icon: <UserCheck size={32} />,
-      title: "Profesional",
-      desc: "Ditangani langsung oleh dokter spesialis dan terapis bersertifikat yang berpengalaman.",
+      title: "Professional",
+      desc: "Performed by experienced specialist doctors and certified professional therapists.",
     },
     {
       icon: <ShieldCheck size={32} />,
-      title: "Aman & Steril",
-      desc: "Prosedur medis terstandarisasi dengan peralatan modern yang menjamin keamanan pasien.",
+      title: "Safe And Sterile",
+      desc: "Medical-grade procedures using advanced technology to ensure maximum safety.",
     },
     {
       icon: <HeartHandshake size={32} />,
-      title: "Nyaman",
-      desc: "Suasana klinik yang tenang dan pelayanan ramah untuk pengalaman perawatan terbaik.",
+      title: "Comfortable",
+      desc: "A relaxing clinic environment with personalized and friendly care.",
     },
   ];
 
@@ -187,12 +180,11 @@ const Dashboard = () => {
       `}</style>
 
       {/* 1. HERO SECTION */}
-      <section className="w-full min-h-screen bg-[#FAE3C3] flex items-center relative overflow-hidden pt-15">
+      <section className="w-full min-h-screen bg-[#ffffff] flex items-center relative overflow-hidden pt-15">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 rounded-bl-full filter blur-3xl z-0"></div>
-
+{/* FAE3C3 */}
         <div
-          className={`${commonContainerClass} py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20 relative z-10`}
-        >
+          className={`${commonContainerClass} py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20 relative z-10`}>
           <div className="flex-1 max-w-xl text-center md:text-left animate-fadeIn">
             <p className="text-sm font-bold tracking-[0.3em] uppercase mb-4 text-[#15503E]/60">
               Welcome to Aldiora
@@ -200,7 +192,7 @@ const Dashboard = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-[#15503E] leading-[1.1] mb-6">
               Where Health <br className="hidden md:block" />
               Meets Aesthetics <br className="hidden md:block" />
-              <span className="text-white drop-shadow-md italic font-light">
+              <span className="text-[#15503E] drop-shadow-md italic font-light">
                 From Within
               </span>
             </h1>
@@ -213,11 +205,12 @@ const Dashboard = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Link
                 to="/konsultasi"
-                className="bg-[#15503E] text-[#FAE3C3] px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-[#0f3a2d] hover:scale-105 transition-all duration-300 shadow-xl inline-block"
-              >
+                className="bg-[#15503E] text-[#FAE3C3] px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-[#0f3a2d] hover:scale-105 transition-all duration-300 shadow-xl inline-block">
                 Consult Now
               </Link>
-              <a href="https://maps.app.goo.gl/9TbhAQwdPTDGuDw58" className="bg-transparent border border-[#15503E] text-[#15503E] px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-[#15503E] hover:text-white transition-all duration-300">
+              <a
+                href="https://maps.app.goo.gl/9TbhAQwdPTDGuDw58"
+                className="bg-transparent border border-[#15503E] text-[#15503E] px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-[#15503E] hover:text-white transition-all duration-300">
                 Visit Us
               </a>
             </div>
@@ -278,14 +271,12 @@ const Dashboard = () => {
             <div className="flex gap-4">
               <button
                 onClick={slideLeft}
-                className="p-4 rounded-full border border-[#15503E]/20 text-[#15503E] hover:bg-[#15503E] hover:text-[#FAE3C3] transition-all duration-300 active:scale-95 flex items-center justify-center"
-              >
+                className="p-4 rounded-full border border-[#15503E]/20 text-[#15503E] hover:bg-[#15503E] hover:text-[#FAE3C3] transition-all duration-300 active:scale-95 flex items-center justify-center">
                 <ArrowLeft size={24} />
               </button>
               <button
                 onClick={slideRight}
-                className="p-4 rounded-full border border-[#15503E]/20 text-[#15503E] hover:bg-[#15503E] hover:text-[#FAE3C3] transition-all duration-300 active:scale-95 flex items-center justify-center"
-              >
+                className="p-4 rounded-full border border-[#15503E]/20 text-[#15503E] hover:bg-[#15503E] hover:text-[#FAE3C3] transition-all duration-300 active:scale-95 flex items-center justify-center">
                 <ArrowRight size={24} />
               </button>
             </div>
@@ -293,13 +284,11 @@ const Dashboard = () => {
 
           <div
             ref={sliderRef}
-            className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-12"
-          >
+            className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-12">
             {treatments.map((item) => (
               <div
                 key={item.id}
-                className="snap-center md:snap-start min-w-[85%] md:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] flex-shrink-0"
-              >
+                className="snap-center md:snap-start min-w-[85%] md:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] flex-shrink-0">
                 <LuxuryServiceCard data={item} />
               </div>
             ))}
@@ -308,8 +297,7 @@ const Dashboard = () => {
           <div className="mt-8 flex justify-center">
             <Link
               to="/konsultasi"
-              className="group relative inline-flex items-center gap-3 bg-transparent border-2 border-[#15503E] text-[#15503E] px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest overflow-hidden hover:text-[#FAE3C3] transition-colors duration-300"
-            >
+              className="group relative inline-flex items-center gap-3 bg-transparent border-2 border-[#15503E] text-[#15503E] px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest overflow-hidden hover:text-[#FAE3C3] transition-colors duration-300">
               <span className="absolute inset-0 bg-[#15503E] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out -z-10"></span>
               <span>View All Treatments</span>
               <CalendarCheck
@@ -337,8 +325,7 @@ const Dashboard = () => {
             {advantages.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center p-8 bg-white rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 group cursor-default border border-[#15503E]/5"
-              >
+                className="flex flex-col items-center text-center p-8 bg-white rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 group cursor-default border border-[#15503E]/5">
                 <div className="w-20 h-20 rounded-full bg-[#E5F0EB] flex items-center justify-center text-[#15503E] mb-6 group-hover:scale-110 group-hover:bg-[#15503E] group-hover:text-[#FAE3C3] transition-all duration-300">
                   {item.icon}
                 </div>
@@ -362,8 +349,8 @@ const Dashboard = () => {
               Visit Our Clinic
             </h2>
             <p className="text-white/70 text-lg font-light">
-              Rasakan pengalaman perawatan terbaik di lokasi strategis kami.
-              Kunjungi Aldiora Clinic untuk konsultasi langsung.
+              Experience the finest treatments at our conveniently located
+              clinic. Visit Aldiora Clinic for a personalized consultation.
             </p>
           </div>
 
@@ -379,8 +366,7 @@ const Dashboard = () => {
               }}
               allowFullScreen=""
               loading="lazy"
-              className="group-hover:filter-none transition-all duration-700"
-            ></iframe>
+              className="group-hover:filter-none transition-all duration-700"></iframe>
 
             <div className="absolute bottom-6 left-6 bg-white/90 text-[#15503E] px-6 py-3 rounded-2xl shadow-lg backdrop-blur-sm pointer-events-none">
               <p className="font-bold text-sm">Aldiora Clinic</p>

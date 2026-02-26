@@ -37,8 +37,7 @@ const ServiceDetail = () => {
         {/* Tombol Back */}
         <Link
           to="/konsultasi"
-          className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest mb-10 hover:opacity-70 transition group"
-        >
+          className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest mb-10 hover:opacity-70 transition group">
           <ArrowLeft
             size={16}
             className="group-hover:-translate-x-1 transition-transform"
@@ -77,8 +76,7 @@ const ServiceDetail = () => {
             {service.pricing.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col md:flex-row justify-between items-start md:items-center py-8 border-b border-[#15503E]/20 hover:bg-[#15503E]/5 transition-colors px-6 rounded-2xl cursor-default"
-              >
+                className="flex flex-col md:flex-row justify-between items-start md:items-center py-8 border-b border-[#15503E]/20 hover:bg-[#15503E]/5 transition-colors px-6 rounded-2xl cursor-default">
                 {/* Kiri: Nama & Deskripsi */}
                 <div className="md:w-3/4 pr-8">
                   <h4 className="text-2xl font-playfair font-bold mb-2 text-[#15503E]">
@@ -91,9 +89,9 @@ const ServiceDetail = () => {
 
                 {/* Kanan: Harga */}
                 <div className="md:w-1/4 mt-4 md:mt-0 text-left md:text-right flex-shrink-0">
-                  <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
+                  {/* <p className="text-xs uppercase tracking-widest opacity-50 mb-1">
                     Starts From
-                  </p>
+                  </p> */}
                   <p className="text-2xl md:text-3xl font-bold font-playfair text-[#15503E]">
                     {item.price}
                   </p>
@@ -109,13 +107,12 @@ const ServiceDetail = () => {
             href="https://wa.me/6281226316899?text=Halo%20Aldiora%20Clinic!%20Saya%20tertarik%20untuk%20melakukan%20treatment%2C%20bisa%20minta%20info%20detailnya%3F"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#15503E] text-[#FAE3C3] px-10 py-5 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform shadow-xl hover:shadow-2xl"
-          >
+            className="inline-flex items-center gap-3 bg-[#15503E] text-[#FAE3C3] px-10 py-5 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform shadow-xl hover:shadow-2xl">
             Book Appointment <CheckCircle size={20} />
           </a>
           <p className="mt-4 text-xs opacity-60">
-            *Konsultasi diperlukan sebelum tindakan. Harga dapat berubah
-            sewaktu-waktu.
+            Consultation is required prior to treatment. Prices are subject to
+            change at any time.
           </p>
         </div>
       </div>

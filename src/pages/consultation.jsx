@@ -21,8 +21,7 @@ const Consultation = () => {
             Curated <br /> Treatments
           </h1>
           <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-light">
-            Temukan solusi perawatan kulit yang dirancang khusus untuk kebutuhan
-            Anda.
+            Discover skin care solutions designed specifically for your needs.
           </p>
         </div>
       </section>
@@ -36,7 +35,7 @@ const Consultation = () => {
                 Our Services
               </h2>
               <p className="text-[#15503E]/60 text-sm mt-2">
-                Klik kartu untuk melihat detail harga dan prosedur.
+                Click on a card to see pricing details and procedures.
               </p>
             </div>
             <div className="text-[#15503E]/40 text-sm font-bold tracking-widest">

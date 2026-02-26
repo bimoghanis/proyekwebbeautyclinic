@@ -11,7 +11,6 @@ import tools2 from "../assets/tools2.webp";
 const About = () => {
   // Setup untuk WhatsApp Link
 
-
   return (
     <div className="w-full overflow-x-hidden font-sans">
       {/* 1. HEADER (EMPOWERING CONFIDENCE) */}
@@ -26,9 +25,9 @@ const About = () => {
             Empowering Confidence
           </h1>
           <p className="text-[#15503E]/80 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-light">
-            Kami percaya bahwa kecantikan sejati bermula dari rasa percaya diri.
-            Dengan teknologi dermatologi terkini dan sentuhan personal yang
-            hangat, kami hadir untuk merawat versi terbaik dari diri Anda.
+            We believe true beauty starts with confidence. Through advanced
+            dermatological technology and a warm, personalized approach, we are
+            dedicated to nurturing the best version of you.
           </p>
         </div>
       </section>
@@ -122,7 +121,7 @@ const About = () => {
                 Our Facilities
               </h2>
               <p className="text-[#15503E]/60">
-                Teknologi modern dalam kenyamanan premium.
+                Modern technology, delivered in premium comfort.
               </p>
             </div>
             <div className="hidden md:block text-[#15503E]/40 text-sm font-bold tracking-widest uppercase">

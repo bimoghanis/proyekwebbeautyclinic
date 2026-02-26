@@ -12,70 +12,67 @@ import prpMicro from "../assets/prpMicro.webp";
 import keloidInject from "../assets/keloidInject.webp";
 import lightPulse from "../assets/lightPulse.webp";
 
-
 export const SERVICES_DATA = [
-  // === 01. DOCTOR CONSULTATION (Tetap) ===
+  // === 01. DOCTOR CONSULTATION ===
   {
     id: "01",
     slug: "doctor-consultation",
     title: "Doctor Consultation",
     shortDesc:
-      "Konsultasi profesional untuk analisis kondisi kulit yang tepat.",
+      "Professional consultation for accurate skin condition analysis.",
     fullDesc:
-      "Di Aldiora Clinic, setiap perjalanan menuju kecantikan dimulai dari konsultasi profesional. Dokter kami akan memahami kondisi kulit, gaya hidup, dan tujuan perawatanmu sebelum memberikan rekomendasi, sehingga setiap tindakan yang dilakukan aman, personal, dan memberikan hasil terbaik.",
+      "At Aldiora Clinic, every beauty journey begins with a professional consultation. Our doctors will understand your skin condition, lifestyle, and treatment goals before providing recommendations, ensuring every procedure is safe, personalized, and delivers optimal results.",
     image: doctorConsul,
     icon: <Stethoscope size={24} />,
     pricing: [
       {
         title: "Sp.GK (Nutrition Specialist)",
-        desc: "Menganalisis kebutuhan nutrisi tubuh untuk mendukung kesehatan kulit dan kebugaran secara menyeluruh. Cocok bagi kamu yang ingin merawat kecantikan dari dalam.",
-        price: "Rp 350.000",
+        desc: "Analyzes your body's nutritional needs to support overall skin health and wellness. Ideal for those who want to enhance beauty from within.",
+        price: "IDR 350,000",
       },
       {
         title: "Sp.DVE (Dermatovenereologist)",
-        desc: "Konsultasi eksklusif dengan dokter berpengalaman untuk evaluasi kondisi kulit dan perencanaan perawatan yang tepat, mencakup masalah jerawat, pigmentasi, hingga penuaan.",
-        price: "Rp 350.000",
+        desc: "Exclusive consultation with an experienced specialist to evaluate skin conditions and create a personalized treatment plan, including acne, pigmentation, and aging concerns.",
+        price: "IDR 350,000",
       },
       {
         title: "Aesthetic Doctor",
-        desc: "Sesi evaluasi awal untuk mengetahui kondisi kulit dan rekomendasi perawatan yang sesuai. Free konsultasi dengan treatment > Rp 250.000.",
-        price: "Rp 50.000",
+        desc: "Initial evaluation session to assess your skin condition and recommend suitable treatments. Free consultation with treatments above IDR 250,000.",
+        price: "IDR 50,000",
       },
     ],
   },
-
   // === 02. FACIAL TREATMENTS ===
   {
     id: "02",
     slug: "facial-treatments",
     title: "Facial Treatments",
     shortDesc:
-      "Perawatan pembersihan dan hidrasi untuk wajah bersih bercahaya.",
-    // Deskripsi lengkap dirangkum dari penjelasan Purifypore & Revitalizing di brosur
+      "Deep cleansing and hydration treatments for clear, radiant skin.",
     fullDesc:
-      "Nikmati perawatan wajah menyeluruh dengan teknik ekstraksi lembut dan hidrasi maksimal. Tersedia pilihan Purifypore Facial untuk mengangkat komedo & membersihkan pori secara mendalam, serta Revitalizing Facial untuk mengembalikan kilau alami dan kesegaran wajah Anda.",
-    image: facialTreat, // Sudah di-resize ke w=800 biar ringan
+      "Enjoy comprehensive facial treatments featuring gentle extraction and intensive hydration. Choose Purifypore Facial to remove blackheads and deeply cleanse pores, or Revitalizing Facial to restore your skin’s natural glow and freshness.",
+    image: facialTreat,
     icon: <Sparkles size={24} />,
     pricing: [
       {
         title: "Purifypore Facial (Acne)",
-        price: "Rp 499.000",
-        desc: "Membantu membersihkan pori tersumbat dan jerawat aktif agar kulit tampak lebih bersih dan halus.",
+        price: "IDR 499,000",
+        desc: "Helps unclog pores and treat active acne, leaving your skin clearer and smoother.",
       },
       {
         title: "Purifypore Facial (Brightening)",
-        price: "Rp 499.000",
-        desc: "Mengembalikan kecerahan kulit dan menjaga kelembapan alami wajah secara intensif.",
+        price: "IDR 499,000",
+        desc: "Restores skin brightness while maintaining optimal hydration for a healthy glow.",
       },
       {
         title: "Revitalizing Facial (Acne)",
-        price: "Rp 299.000",
-        desc: "Menenangkan peradangan dan membantu mengurangi jerawat ringan agar kulit terasa nyaman.",
+        price: "IDR 299,000",
+        desc: "Soothes inflammation and helps reduce mild acne for more comfortable skin.",
       },
       {
         title: "Revitalizing Facial (Brightening)",
-        price: "Rp 299.000",
-        desc: "Solusi untuk mencerahkan kulit kusam dan membuat warna kulit tampak lebih merata.",
+        price: "IDR 299,000",
+        desc: "Brightens dull skin and helps achieve a more even skin tone.",
       },
     ],
   },
@@ -85,137 +82,136 @@ export const SERVICES_DATA = [
     id: "03",
     slug: "peeling-treatments",
     title: "Peeling Treatments",
-    shortDesc: "Eksfoliasi dan pencerahan untuk mengangkat sel kulit mati.",
+    shortDesc: "Exfoliation and brightening to remove dead skin cells.",
     fullDesc:
-      "Rangkaian perawatan eksfoliasi dan pencerahan yang berfungsi untuk mengangkat sel kulit mati, meratakan tekstur kulit, serta menampilkan kulit yang lebih bersih dan bercahaya.",
+      "A range of exfoliating and brightening treatments designed to remove dead skin cells, improve skin texture, and reveal clearer, smoother, and more radiant skin.",
     image: peelingTreat,
     icon: <Activity size={24} />,
     pricing: [
       // --- 1. DERMAGLOW PEEL ---
       {
         title: "DermaGlow Peel (Face / Body Small)",
-        desc: "Peeling ringan untuk mencerahkan kulit kusam dan meratakan tekstur kulit.",
-        price: "Rp 348.000",
+        desc: "Light peeling treatment to brighten dull skin and improve skin texture.",
+        price: "IDR 348,000",
       },
       {
         title: "DermaGlow Peel (Body Medium)",
-        desc: "Perawatan DermaGlow untuk area tubuh ukuran sedang.",
-        price: "Rp 578.000",
+        desc: "DermaGlow treatment designed for medium-sized body areas.",
+        price: "IDR 578,000",
       },
       {
         title: "DermaGlow Peel (Body Large)",
-        desc: "Perawatan DermaGlow untuk area tubuh ukuran besar.",
-        price: "Rp 978.000",
+        desc: "DermaGlow treatment designed for larger body areas.",
+        price: "IDR 978,000",
       },
 
       // --- 2. BRIGHTGLOW PRO PEEL ---
       {
         title: "BrightGlow Pro Peel (Face / Body Small)",
-        desc: "Peeling lembut untuk memberikan efek cerah dan glowing seketika pada kulit.",
-        price: "Rp 348.000",
+        desc: "Gentle peeling treatment that instantly enhances skin brightness and glow.",
+        price: "IDR 348,000",
       },
       {
         title: "BrightGlow Pro Peel (Body Medium)",
-        desc: "Perawatan BrightGlow untuk area tubuh ukuran sedang.",
-        price: "Rp 578.000",
+        desc: "BrightGlow treatment designed for medium-sized body areas.",
+        price: "IDR 578,000",
       },
       {
         title: "BrightGlow Pro Peel (Body Large)",
-        desc: "Perawatan BrightGlow untuk area tubuh ukuran besar.",
-        price: "Rp 978.000",
+        desc: "BrightGlow treatment designed for larger body areas.",
+        price: "IDR 978,000",
       },
 
       // --- 3. DERMAGLOW PRO PEEL ---
       {
         title: "DermaGlow Pro Peel (Face / Body Small)",
-        desc: "Peeling lebih intens untuk meratakan warna kulit, mengurangi bekas jerawat, dan memperhalus permukaan.",
-        price: "Rp 428.000",
+        desc: "More intensive peeling to even out skin tone, reduce acne scars, and smooth the skin surface.",
+        price: "IDR 428,000",
       },
       {
         title: "DermaGlow Pro Peel (Body Medium)",
-        desc: "Perawatan DermaGlow Pro intensif untuk area tubuh ukuran sedang.",
-        price: "Rp 728.000",
+        desc: "Intensive DermaGlow Pro treatment for medium-sized body areas.",
+        price: "IDR 728,000",
       },
       {
         title: "DermaGlow Pro Peel (Body Large)",
-        desc: "Perawatan DermaGlow Pro intensif untuk area tubuh ukuran besar.",
-        price: "Rp 1.028.000",
+        desc: "Intensive DermaGlow Pro treatment for larger body areas.",
+        price: "IDR 1,028,000",
       },
 
       // --- 4. ACNE CLARIFYING PEEL ---
       {
         title: "Acne Clarifying Peel (Face / Body Small)",
-        desc: "Peeling khusus mengatasi jerawat aktif, membersihkan pori, dan menenangkan kulit.",
-        price: "Rp 428.000",
+        desc: "Specialized peeling to treat active acne, deeply cleanse pores, and soothe the skin.",
+        price: "IDR 428,000",
       },
       {
         title: "Acne Clarifying Peel (Body Medium)",
-        desc: "Perawatan khusus jerawat untuk area tubuh ukuran sedang.",
-        price: "Rp 728.000",
+        desc: "Specialized acne treatment for medium-sized body areas.",
+        price: "IDR 728,000",
       },
       {
         title: "Acne Clarifying Peel (Body Large)",
-        desc: "Perawatan khusus jerawat untuk area tubuh ukuran besar.",
-        price: "Rp 1.028.000",
+        desc: "Specialized acne treatment for larger body areas.",
+        price: "IDR 1,028,000",
       },
     ],
   },
-
   // === 04. BODY TREATMENTS ===
   {
     id: "04",
-    slug: "body-treatments", // Slug tetap 'body-treatments' agar routing aman, atau bisa diganti 'ultrafirm-lift'
+    slug: "body-treatments",
     title: "Ultrafirm Lift (HIFU)",
-    shortDesc: "Pengencangan wajah & tubuh non-invasif tanpa downtime.",
+    shortDesc: "Non-invasive face and body tightening with no downtime.",
     fullDesc:
-      "Perawatan pengencangan non-invasif dengan teknologi HIFU (High-Intensity Focused Ultrasound) canggih untuk membantu mengangkat, mengencangkan, dan membentuk wajah maupun tubuh tanpa downtime, memberikan hasil alami dan tahan lama.",
+      "A non-invasive lifting treatment using advanced HIFU (High-Intensity Focused Ultrasound) technology to help lift, tighten, and contour the face and body without downtime, delivering natural and long-lasting results.",
     image: bodyTreat,
     icon: <Sparkles size={24} />,
     pricing: [
       {
         title: "Full Face",
-        price: "Rp 1.498.000",
-        desc: "Mengencangkan dan mengangkat seluruh area wajah agar tampak lebih tegas dan muda.",
+        price: "IDR 1,498,000",
+        desc: "Lifts and tightens the entire facial area for a firmer, more youthful appearance.",
       },
       {
-        title: "Cheek (Pipi)",
-        price: "Rp 1.198.000",
-        desc: "Mengencangkan area pipi yang kendur dan mempertegas kontur wajah secara alami.",
+        title: "Cheeks",
+        price: "IDR 1,198,000",
+        desc: "Tightens sagging cheeks and enhances natural facial contours.",
       },
       {
-        title: "Chin (Dagu)",
-        price: "Rp 978.000",
-        desc: "Membantu mengurangi lemak dagu ganda dan membentuk garis rahang agar tampak lebih ramping.",
+        title: "Chin",
+        price: "IDR 978,000",
+        desc: "Helps reduce double chin and define the jawline for a slimmer look.",
       },
       {
-        title: "Neck (Leher)",
-        price: "Rp 878.000",
-        desc: "Mengencangkan kulit leher yang kendur dan membuat tampilannya lebih halus serta muda.",
+        title: "Neck",
+        price: "IDR 878,000",
+        desc: "Tightens loose neck skin and improves smoothness for a more youthful appearance.",
       },
       {
-        title: "Tummy (Perut)",
-        price: "Rp 1.478.000",
-        desc: "Mengencangkan kulit perut serta memperbaiki bentuk setelah penurunan berat badan atau kehamilan.",
+        title: "Tummy",
+        price: "IDR 1,478,000",
+        desc: "Tightens abdominal skin and improves contour after weight loss or pregnancy.",
       },
       {
-        title: "Thigh (Paha)",
-        price: "Rp 1.478.000",
-        desc: "Mengencangkan kulit paha yang kendur agar tampak lebih kencang dan halus.",
+        title: "Thighs",
+        price: "IDR 1,478,000",
+        desc: "Firms and tightens sagging thigh skin for a smoother appearance.",
       },
       {
-        title: "Arms (Lengan)",
-        price: "Rp 898.000",
-        desc: "Mengurangi kulit kendur pada lengan atas dan meningkatkan kekencangan kulit.",
+        title: "Arms",
+        price: "IDR 898,000",
+        desc: "Reduces loose skin on the upper arms and improves firmness.",
       },
       {
-        title: "Eyes (Mata)",
-        price: "Rp 378.000",
-        desc: "Menghaluskan garis halus di area mata agar tampak lebih segar.",
+        title: "Eyes",
+        price: "IDR 378,000",
+        desc: "Smooths fine lines around the eyes for a refreshed look.",
       },
       {
-        title: "Forehead (Dahi)",
-        price: "Rp 578.000",
-        desc: "Menghaluskan garis halus dan mengangkat area dahi agar tampak segar dan terbuka.",
+        title: "Forehead",
+        price: "IDR 578,000",
+        desc: "Smooths fine lines and lifts the forehead for a more youthful and open appearance.",
       },
     ],
   },
@@ -226,36 +222,36 @@ export const SERVICES_DATA = [
     slug: "prp-microneedling",
     title: "PRP + Microneedling",
     shortDesc:
-      "Regenerasi kulit alami menggunakan plasma darah dan microneedling.",
+      "Natural skin regeneration using platelet-rich plasma and microneedling.",
     fullDesc:
-      "Perawatan regenerasi kulit yang menggabungkan microneedling dengan PRP (Platelet-Rich Plasma) dari darah sendiri. Efektif untuk menstimulasi kolagen, memperbaiki tekstur bopeng, memudarkan bekas jerawat, dan menumbuhkan rambut.",
+      "An advanced skin regeneration treatment that combines microneedling with PRP (Platelet-Rich Plasma) derived from your own blood. This procedure effectively stimulates collagen production, improves acne scars, refines skin texture, and promotes hair growth.",
     image: prpMicro,
     icon: <Activity size={24} />,
     pricing: [
       {
         title: "PRP Face Signature (+ LumiRay Therapy)",
-        desc: "Peremajaan kulit menggunakan PRP kaya faktor pertumbuhan untuk menghaluskan tekstur, memudarkan bekas jerawat, dan efek glowing alami.",
-        price: "Rp 738.000",
+        desc: "Skin rejuvenation using growth factor-rich PRP to smooth skin texture, reduce acne scars, and enhance your natural glow.",
+        price: "IDR 738,000",
       },
       {
         title: "PRP Hair Signature",
-        desc: "Terapi PRP untuk menstimulasi akar rambut, mengurangi kerontokan, dan mendorong pertumbuhan rambut baru agar lebih tebal.",
-        price: "Rp 738.000",
+        desc: "PRP therapy to stimulate hair follicles, reduce hair loss, and promote thicker, healthier hair growth.",
+        price: "IDR 738,000",
       },
       {
         title: "Radiant Skin Collagen Booster",
-        desc: "Microneedling untuk meningkatkan kolagen alami, mencerahkan, kenyal, dan bercahaya (Healthy Glow).",
-        price: "Rp 885.000",
+        desc: "Microneedling treatment to boost natural collagen production, improving brightness, firmness, and healthy glow.",
+        price: "IDR 885,000",
       },
       {
         title: "Smooth Skin Collagen Booster",
-        desc: "Terapi kolagen yang diformulasikan khusus untuk menghaluskan permukaan kulit, menyamarkan garis halus, dan elastisitas.",
-        price: "Rp 885.000",
+        desc: "Specially formulated collagen therapy to smooth skin texture, reduce fine lines, and improve elasticity.",
+        price: "IDR 885,000",
       },
       {
         title: "ReGrow Hair Therapy Booster",
-        desc: "Booster khusus merangsang rambut baru dan menguatkan akar. Ideal untuk menambah volume dan mempercepat fase pertumbuhan.",
-        price: "Rp 785.000",
+        desc: "Advanced booster designed to stimulate new hair growth and strengthen hair roots. Ideal for improving volume and accelerating growth.",
+        price: "IDR 785,000",
       },
     ],
   },
@@ -265,17 +261,17 @@ export const SERVICES_DATA = [
     id: "06",
     slug: "acne-injection",
     title: "Acne Injection",
-    shortDesc: "Solusi cepat meredakan peradangan jerawat aktif.",
+    shortDesc: "Fast solution to reduce inflammation of active acne.",
     fullDesc:
-      "Suntikan anti-inflamasi yang bekerja cepat untuk meredakan jerawat meradang, mengurangi bengkak & kemerahan, serta mempercepat penyembuhan hanya dalam hitungan hari.",
+      "A fast-acting anti-inflammatory injection designed to reduce inflamed acne, minimize swelling and redness, and accelerate the healing process within days.",
     image:
       "https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=2070&auto=format&fit=crop",
     icon: <Stethoscope size={24} />,
     pricing: [
       {
         title: "InstaShot Acne",
-        desc: "Suntikan anti-inflamasi instan untuk mengempeskan jerawat aktif dengan cepat.",
-        price: "Rp 198.000",
+        desc: "Instant anti-inflammatory injection to quickly reduce active acne.",
+        price: "IDR 198,000",
       },
     ],
   },
@@ -285,16 +281,16 @@ export const SERVICES_DATA = [
     id: "07",
     slug: "keloid-injection",
     title: "Keloid Injection",
-    shortDesc: "Penanganan keloid untuk mengecilkan jaringan parut.",
+    shortDesc: "Effective treatment to reduce and flatten keloid scars.",
     fullDesc:
-      "Perawatan injeksi khusus untuk mengecilkan keloid, meratakan permukaan kulit, serta mengurangi kemerahan, gatal, atau rasa tidak nyaman pada area yang terdampak.",
+      "A specialized injection treatment designed to reduce the size of keloids, smooth the skin surface, and relieve redness, itching, and discomfort in the affected area.",
     image: keloidInject,
     icon: <Stethoscope size={24} />,
     pricing: [
       {
-        title: "Keloid Injection by Derm",
-        desc: "Injeksi kortikosteroid aman oleh dokter untuk menipiskan jaringan parut keloid.",
-        price: "Rp 258.000",
+        title: "Keloid Injection by Dermatologist",
+        desc: "Safe corticosteroid injection performed by a doctor to reduce and flatten keloid scar tissue.",
+        price: "IDR 258,000",
       },
     ],
   },
@@ -305,82 +301,82 @@ export const SERVICES_DATA = [
     slug: "laser-treatments",
     title: "Laser Treatments",
     shortDesc:
-      "Teknologi laser canggih untuk flek, bekas jerawat, dan pori-pori.",
+      "Advanced laser technology for pigmentation, acne scars, and enlarged pores.",
     fullDesc:
-      "Perawatan dengan teknologi laser canggih untuk mengatasi berbagai masalah kulit seperti flek, bekas jerawat, pori-pori besar, dan garis halus — menjadikan kulit tampak lebih halus, cerah, dan merata.",
+      "Advanced laser treatments designed to address various skin concerns such as pigmentation, acne scars, enlarged pores, and fine lines — revealing smoother, clearer, and more radiant skin.",
     image: laserTreat,
     icon: <Sparkles size={24} />,
     pricing: [
       // --- PICO REJUVENATION ---
       {
         title: "PICO Face (& Lips) Rejuvenation",
-        desc: "Meremajakan wajah dan bibir agar kulit tampak lebih halus dan segar.",
-        price: "Rp 1.287.000",
+        desc: "Rejuvenates the face and lips for smoother, healthier, and more refreshed skin.",
+        price: "IDR 1,287,000",
       },
       {
         title: "PICO Body Rejuvenation",
-        desc: "Perawatan peremajaan untuk area tubuh (Small / Medium / Large). Harga mulai dari.",
-        price: "Rp 1.287.000",
+        desc: "Rejuvenation treatment for body areas (Small / Medium / Large). Starting from.",
+        price: "IDR 1,287,000",
       },
 
       // --- PICO SOOTHE ---
       {
         title: "PICO Soothe: PIE & Rosacea",
-        desc: "Meredakan kemerahan (PIE) bekas jerawat dan sensitivitas kulit akibat Rosacea.",
-        price: "Rp 2.272.000",
+        desc: "Helps reduce redness from post-inflammatory erythema (PIE) and rosacea-related sensitivity.",
+        price: "IDR 2,272,000",
       },
 
       // --- PICO GLOW ---
       {
         title: "PICO Radiance",
-        desc: "Membantu mencerahkan seluruh wajah dan meningkatkan kejernihan kulit agar tampak segar alami.",
-        price: "Rp 2.438.000",
+        desc: "Brightens the entire face and enhances skin clarity for a naturally radiant appearance.",
+        price: "IDR 2,438,000",
       },
       {
         title: "PICO Spotless",
-        desc: "Menangani pigmentasi lapisan luar (flek matahari) untuk warna kulit yang lebih bersih.",
-        price: "Rp 1.231.000",
+        desc: "Treats superficial pigmentation such as sun spots for clearer, more even skin tone.",
+        price: "IDR 1,231,000",
       },
       {
         title: "PICO Clarity",
-        desc: "Membantu mengurangi melasma dan flek hormonal, menjadikan warna kulit lebih merata.",
-        price: "Rp 1.639.000",
+        desc: "Helps reduce melasma and hormonal pigmentation for a more even complexion.",
+        price: "IDR 1,639,000",
       },
 
       // --- PICO RENEWAL ---
       {
         title: "PICO SmoothFX / Scar Renew",
-        desc: "Meratakan tekstur kulit, mengecilkan pori besar, dan mengurangi bekas jerawat bopeng.",
-        price: "Rp 1.488.000",
+        desc: "Improves skin texture, minimizes enlarged pores, and reduces acne scars.",
+        price: "IDR 1,488,000",
       },
 
       // --- CO2 LASER ---
       {
         title: "CO2 Pore Refine / Scar Renew",
-        desc: "Teknologi Fractional CO2 untuk mengecilkan pori-pori dan memperbaiki tekstur bekas jerawat.",
-        price: "Rp 1.228.000",
+        desc: "Fractional CO2 laser technology to refine pores and improve acne scar texture.",
+        price: "IDR 1,228,000",
       },
       {
         title: "CO2 Skin Spot Removal",
-        desc: "Menghilangkan tahi lalat, skin tag, kutil, atau spot kulit tertentu secara akurat.",
-        price: "Rp 878.000",
+        desc: "Precisely removes moles, skin tags, warts, and other skin lesions.",
+        price: "IDR 878,000",
       },
       {
         title: "Advanced CO2 by Dermatologist",
-        desc: "Tindakan laser CO2 tingkat lanjut langsung oleh dokter spesialis (Sp.DVE). Harga mulai dari.",
-        price: "Rp 878.000",
+        desc: "Advanced CO2 laser procedure performed by a dermatologist. Starting from.",
+        price: "IDR 878,000",
       },
 
       // --- TATTOO REMOVAL ---
       {
         title: "PICO Tattoo Removal (Dark Ink)",
-        desc: "Menghapus tato warna Hitam, Coklat Tua, dan Coklat.",
-        price: "Rp 978.000",
+        desc: "Removes dark tattoo pigments such as black and dark brown ink.",
+        price: "IDR 978,000",
       },
       {
         title: "PICO Tattoo Removal (Color Ink)",
-        desc: "Menghapus tato warna Merah, Kuning, Hijau, Biru, atau Ungu. Harga mulai dari.",
-        price: "Rp 978.000",
+        desc: "Removes colored tattoo pigments such as red, yellow, green, blue, and purple. Starting from.",
+        price: "IDR 978,000",
       },
     ],
   },
@@ -390,61 +386,61 @@ export const SERVICES_DATA = [
     id: "09",
     slug: "skin-boosters",
     title: "Skin Boosters",
-    shortDesc: "Hidrasi intens dan nutrisi DNA Salmon untuk kulit glowing.",
+    shortDesc: "Intensive hydration and Salmon DNA nutrition for glowing skin.",
     fullDesc:
-      "Segarkan kulitmu dari dalam dengan rangkaian skin booster berteknologi tinggi yang memadukan sains dan estetika. Setiap formula bekerja melembapkan secara mendalam, mengembalikan elastisitas, dan memancarkan kilau alami kulit.",
+      "Revitalize your skin from within with our advanced skin booster treatments that combine science and aesthetics. Each formula deeply hydrates, restores elasticity, and enhances your skin’s natural radiance.",
     image: skinBoost,
     icon: <Activity size={24} />,
     pricing: [
       {
         title: "Rejuran Healer",
-        desc: "Regenerasi kulit berbahan DNA Salmon untuk memperbaiki tekstur, garis halus, dan elastisitas.",
-        price: "Rp 3.948.000",
+        desc: "Salmon DNA-based skin regeneration to improve texture, reduce fine lines, and restore elasticity.",
+        price: "IDR 3,948,000",
       },
       {
         title: "Rejuran HB",
-        desc: "Kombinasi DNA Salmon + Asam Hialuronat (HA) untuk hidrasi mendalam sekaligus perbaikan struktur kulit.",
-        price: "Rp 3.487.000",
+        desc: "Combination of Salmon DNA and Hyaluronic Acid (HA) for deep hydration and skin structure repair.",
+        price: "IDR 3,487,000",
       },
       {
         title: "Rejuran S",
-        desc: "Diformulasikan khusus untuk menyamarkan bekas jerawat (scars) serta memperbaiki tekstur tidak merata.",
-        price: "Rp 2.948.000",
+        desc: "Specially formulated to reduce acne scars and improve uneven skin texture.",
+        price: "IDR 2,948,000",
       },
       {
         title: "Rejuran I",
-        desc: "Khusus area mata (bawah mata) untuk mengurangi kerutan halus, kantung mata, dan lingkar hitam.",
-        price: "Rp 2.948.000",
+        desc: "Designed for the delicate under-eye area to reduce fine lines, eye bags, and dark circles.",
+        price: "IDR 2,948,000",
       },
       {
         title: "VitaGlow+ (PN)",
-        desc: "Injeksi peremajaan berbasis Polinukleotida (PN) untuk mengencangkan dan melembapkan secara intensif.",
-        price: "Rp 2.878.000",
+        desc: "Polynucleotide-based rejuvenation injection to firm and deeply hydrate the skin.",
+        price: "IDR 2,878,000",
       },
       {
         title: "HydraMax+ (Profhilo Alternative)",
-        desc: "Bio-remodelling dengan HA konsentrasi tinggi untuk menarik kelembapan 1000x beratnya. Efek lifting & glowing.",
-        price: "Rp 5.458.000",
+        desc: "High-concentration Hyaluronic Acid bio-remodelling treatment that attracts up to 1000x its weight in moisture for lifting and glowing effects.",
+        price: "IDR 5,458,000",
       },
       {
         title: "HydraFix Full Face",
-        desc: "Skin booster HA + 50 Nutrisi penting (vitamin, mineral, antioksidan) untuk revitalisasi menyeluruh.",
-        price: "Rp 2.378.000",
+        desc: "Hyaluronic Acid skin booster enriched with 50 essential nutrients including vitamins, minerals, and antioxidants for total skin revitalization.",
+        price: "IDR 2,378,000",
       },
       {
         title: "HydraFix Under Eyes",
-        desc: "Revitalisasi khusus area bawah mata untuk tampilan lebih segar.",
-        price: "Rp 1.708.000",
+        desc: "Targeted under-eye revitalization treatment for a fresher, more youthful appearance.",
+        price: "IDR 1,708,000",
       },
       {
         title: "DNA Revita+",
-        desc: "Memperbaiki sel kulit sekaligus menjaga kelembapan dan regenerasi alami dari dalam.",
-        price: "Rp 1.378.000",
+        desc: "Supports skin cell repair while maintaining hydration and natural regeneration.",
+        price: "IDR 1,378,000",
       },
       {
         title: "DNA Revita Ultimate",
-        desc: "Skin booster premium dengan Asam Hialuronat murni berkonsentrasi tinggi untuk efek glowy lift alami.",
-        price: "Rp 1.608.000",
+        desc: "Premium skin booster with high-purity Hyaluronic Acid for natural lifting and radiant glow.",
+        price: "IDR 1,608,000",
       },
     ],
   },
@@ -454,36 +450,37 @@ export const SERVICES_DATA = [
     id: "10",
     slug: "aldiora-refine-injections",
     title: "Aldiora Refine Injections",
-    shortDesc: "Suntikan anti-aging (Botox) untuk menghaluskan kerutan.",
+    shortDesc:
+      "Anti-aging injections (Botox) to smooth fine lines and wrinkles.",
     fullDesc:
-      "Perawatan injeksi yang diformulasikan untuk mengurangi garis halus, mengencangkan kontur wajah, dan mengembalikan tampilan yang muda serta segar. Tersedia dalam varian Signature & Prestige sesuai kebutuhan.",
+      "A premium injectable treatment designed to reduce fine lines, refine facial contours, and restore a youthful, refreshed appearance. Available in Signature and Prestige variants to suit your individual needs.",
     image: refineInject,
     icon: <Sparkles size={24} />,
     pricing: [
       {
         title: "Refine Injection Signature (50 IU)",
-        desc: "Perawatan standar efektif menghaluskan garis halus dengan hasil natural. Cocok untuk pemula.",
-        price: "Rp 5.487.000",
+        desc: "Standard treatment that effectively smooths fine lines while maintaining natural-looking results. Ideal for first-time users.",
+        price: "IDR 5,487,000",
       },
       {
         title: "Refine Injection Signature (Add 10 IU)",
-        desc: "Tambahan dosis per 10 IU untuk area yang membutuhkan penanganan ekstra.",
-        price: "Rp 987.000",
+        desc: "Additional 10 IU dose for areas requiring enhanced correction.",
+        price: "IDR 987,000",
       },
       {
         title: "Refine Injection Prestige (100 IU)",
-        desc: "Formula premium dengan daya tahan lebih lama dan hasil lebih presisi/lembut. Sentuhan peremajaan mewah.",
-        price: "Rp 7.487.000",
+        desc: "Premium formula with longer-lasting effects and more refined, precise results for luxurious rejuvenation.",
+        price: "IDR 7,487,000",
       },
       {
         title: "Refine Injection Prestige (Add 20 IU)",
-        desc: "Tambahan dosis per 20 IU untuk varian Prestige.",
-        price: "Rp 1.478.000",
+        desc: "Additional 20 IU dose for the Prestige variant.",
+        price: "IDR 1,478,000",
       },
       {
         title: "MicroRefine Glow Injection",
-        desc: "Injeksi mikro ke lapisan kulit (dermis) untuk hidrasi intens, mengecilkan pori, dan efek 'Glass Skin' natural.",
-        price: "Rp 1.878.000",
+        desc: "Micro-injections into the dermis layer to deeply hydrate, refine pores, and create a natural glass skin effect.",
+        price: "IDR 1,878,000",
       },
     ],
   },
@@ -494,106 +491,106 @@ export const SERVICES_DATA = [
     slug: "iv-drips",
     title: "IV Drips Packages",
     shortDesc:
-      "Infus nutrisi langsung ke aliran darah untuk kesehatan dan kecantikan.",
+      "Nutrient infusions delivered directly into the bloodstream for health and beauty.",
     fullDesc:
-      "Rangkaian IV Drip Aldiora Clinic memberikan nutrisi esensial langsung ke aliran darah untuk menutrisi kulit, meningkatkan hidrasi, dan memancarkan kilau alami dari dalam tubuh. Tersedia juga seri kesehatan untuk stamina, pemulihan (recovery), hingga imunitas.",
+      "Aldiora Clinic IV Drips deliver essential nutrients directly into your bloodstream to nourish the skin, improve hydration, and enhance your natural glow from within. Our packages also include wellness formulas to support stamina, recovery, and immune health.",
     image: dripTreat,
     icon: <Activity size={24} />,
     pricing: [
       // --- RADIANT SKIN SERIES ---
       {
         title: "Radiant Skin Essence",
-        desc: "Ideal untuk kamu yang ingin kulit tampak lebih segar, cerah alami, dan terhidrasi dari dalam.",
-        price: "Rp 278.500",
+        desc: "Ideal for achieving fresher, naturally brighter, and deeply hydrated skin from within.",
+        price: "IDR 278,500",
       },
       {
         title: "Radiant Skin Optima",
-        desc: "Membantu menjaga kekencangan kulit, mengurangi tampilan kusam, dan mendukung kesehatan kulit jangka panjang.",
-        price: "Rp 478.500",
+        desc: "Helps maintain skin firmness, reduce dullness, and support long-term skin health.",
+        price: "IDR 478,500",
       },
       {
         title: "Radiant Skin Elite",
-        desc: "Rangkaian drip premium untuk hasil kulit yang lebih glowing, kencang, dan ternutrisi menyeluruh.",
-        price: "Rp 878.500",
+        desc: "Premium drip formula for enhanced glow, firmness, and complete skin nourishment.",
+        price: "IDR 878,500",
       },
 
       // --- STAMINA PRIME SERIES ---
       {
         title: "Stamina Prime Booster",
-        desc: "Membantu kamu tetap fokus dan bertenaga sepanjang hari, bahkan di tengah aktivitas yang padat.",
-        price: "Rp 378.500",
+        desc: "Helps you stay focused and energized throughout busy and demanding days.",
+        price: "IDR 378,500",
       },
       {
         title: "Stamina Prime Booster Elite",
-        desc: "Cocok untuk gaya hidup aktif dan membutuhkan pemulihan cepat setelah rutinitas kerja atau olahraga intens.",
-        price: "Rp 878.500",
+        desc: "Ideal for active lifestyles requiring faster recovery after work or intense exercise.",
+        price: "IDR 878,500",
       },
 
       // --- RECOVERY & DETOX SERIES ---
       {
         title: "Hangover Rescue Max",
-        desc: "Formula pemulihan cepat untuk mengatasi efek malam panjang, mengembalikan hidrasi, dan menyeimbangkan elektrolit.",
-        price: "Rp 728.500",
+        desc: "Rapid recovery formula to restore hydration, rebalance electrolytes, and help you feel refreshed.",
+        price: "IDR 728,500",
       },
       {
         title: "After Party Reboot",
-        desc: "Recharge tubuh setelah begadang atau aktivitas berlebih agar tetap fit dan fokus sepanjang hari.",
-        price: "Rp 528.500",
+        desc: "Recharges your body after lack of sleep or heavy activity to keep you feeling fit and focused.",
+        price: "IDR 528,500",
       },
 
       // --- DIGESTIVE CARE SERIES ---
       {
         title: "Gastric Revive Drips",
-        desc: "Membantu menenangkan sistem pencernaan dan menjaga keseimbangan area lambung yang tidak nyaman.",
-        price: "Rp 528.500",
+        desc: "Helps soothe the digestive system and restore stomach comfort.",
+        price: "IDR 528,500",
       },
       {
         title: "Diarrhea Rehydra Drips",
-        desc: "Mengembalikan cairan tubuh dengan cepat setelah diare, menjaga elektrolit, dan mempertahankan stamina.",
-        price: "Rp 528.500",
+        desc: "Rapidly restores body fluids, maintains electrolyte balance, and supports recovery.",
+        price: "IDR 528,500",
       },
 
       // --- SPORTS PERFORMANCE SERIES ---
       {
         title: "Sport Enduro Boost",
-        desc: "Membantu menjaga energi dan meningkatkan daya tahan tubuh selama aktivitas fisik atau latihan berat.",
-        price: "Rp 828.500",
+        desc: "Supports energy levels and enhances endurance during physical activity.",
+        price: "IDR 828,500",
       },
       {
         title: "Sport Pain Relief",
-        desc: "Membantu meredakan pegal otot dan nyeri sendi setelah aktivitas fisik intens, serta mempercepat pemulihan.",
-        price: "Rp 828.500",
+        desc: "Helps relieve muscle soreness and joint discomfort while accelerating recovery.",
+        price: "IDR 828,500",
       },
 
       // --- WOMEN'S HEALTH SERIES ---
       {
         title: "Femme Ease Drips",
-        desc: "Diformulasikan khusus untuk mendukung kesehatan dan kenyamanan wanita, terutama saat siklus menstruasi.",
-        price: "Rp 378.500",
+        desc: "Specially formulated to support women's wellness and comfort, especially during menstrual cycles.",
+        price: "IDR 378,500",
       },
 
       // --- RESPIRATORY & FEVER SERIES ---
       {
         title: "Clear Breath Drips",
-        desc: "Membantu menjaga kesehatan pernapasan, melancarkan napas, serta mempercepat pemulihan tubuh.",
-        price: "Rp 478.500",
+        desc: "Supports respiratory health and helps promote faster recovery.",
+        price: "IDR 478,500",
       },
       {
         title: "Fever Ease Drips",
-        desc: "Dirancang untuk membantu tubuh pulih lebih cepat dari demam, mengurangi lelah, dan mengembalikan energi.",
-        price: "Rp 328.500",
+        desc: "Designed to help the body recover faster from fever and restore energy levels.",
+        price: "IDR 328,500",
       },
 
       // --- ANTI-INFLAMMATORY & IMMUNITY ---
       {
         title: "Inflamed Calming Relief",
-        desc: "Membantu meredakan peradangan dalam tubuh, mengurangi gejala alergi, dan memperkuat sistem imun.",
-        price: "Rp 378.500",
+        desc: "Helps reduce inflammation, relieve allergy symptoms, and strengthen the immune system.",
+        price: "IDR 378,500",
       },
       {
         title: "Allerlite Calming Infusion",
-        desc: "Dirancang untuk membantu meredakan gejala alergi dan membuat tubuh terasa lebih nyaman sepanjang hari.",
-        price: "Rp 378.500",
+        desc: "Designed to relieve allergy symptoms and promote overall comfort.",
+        price: "IDR 378,500",
       },
     ],
   },
@@ -603,70 +600,70 @@ export const SERVICES_DATA = [
     id: "12", // Sesuaikan ID dengan urutanmu
     slug: "rf-treatments",
     title: "RF Treatments (Body Sculpting)",
-    shortDesc: "Pengencangan kulit & pembentukan tubuh tanpa downtime.",
+    shortDesc: "Skin tightening & body contouring with no downtime.",
     fullDesc:
-      "Perawatan dengan teknologi radiofrekuensi (RF) yang berfungsi untuk mengencangkan kulit, membentuk kontur wajah dan tubuh, serta membantu mengurangi lemak di area tertentu secara non-invasif dan tanpa downtime.",
+      "Treatment using radiofrequency (RF) technology designed to tighten the skin, sculpt facial and body contours, and help reduce fat in specific areas non-invasively with no downtime.",
     image: keloidInject,
     icon: <Activity size={24} />,
     pricing: [
       // --- Triple Action Body Sculpting ---
       {
-        title: "Triple Action - Tummy (Perut)",
-        desc: "Menggabungkan panas RF & vakum untuk menghancurkan lemak dan mengencangkan kulit perut.",
+        title: "Triple Action - Tummy",
+        desc: "Combines RF heat & vacuum technology to break down fat and tighten abdominal skin.",
         price: "Rp 238.000",
       },
       {
-        title: "Triple Action - Thigh (Paha)",
-        desc: "Membantu mengecilkan lingkar paha dan mengencangkan kulit yang kendur.",
+        title: "Triple Action - Thigh",
+        desc: "Helps reduce thigh circumference and tighten loose skin.",
         price: "Rp 238.000",
       },
       {
-        title: "Triple Action - Arms (Lengan)",
-        desc: "Efektif untuk mengencangkan lengan yang bergelambir.",
+        title: "Triple Action - Arms",
+        desc: "Effective for tightening sagging arms.",
         price: "Rp 238.000",
       },
       {
-        title: "Triple Action - Calf (Betis)",
-        desc: "Membentuk betis agar tampak lebih ramping dan kencang.",
+        title: "Triple Action - Calf",
+        desc: "Contours the calves for a slimmer and firmer appearance.",
         price: "Rp 238.000",
       },
 
       // --- Tight Duo Slimming ---
       {
-        title: "Tight Duo - Tummy (Perut)",
-        desc: "Kombinasi RF & stimulasi otot intens (HIEMT) untuk membakar lemak perut sekaligus membentuk otot.",
+        title: "Tight Duo - Tummy",
+        desc: "Combination of RF & intense muscle stimulation (HIEMT) to burn fat and build abdominal muscle.",
         price: "Rp 438.000",
       },
       {
-        title: "Tight Duo - Thigh (Paha)",
-        desc: "Mengencangkan paha dengan teknologi ganda untuk hasil lebih maksimal.",
+        title: "Tight Duo - Thigh",
+        desc: "Tightens thighs using dual technology for more optimal results.",
         price: "Rp 338.000",
       },
       {
-        title: "Tight Duo - Arms (Lengan)",
-        desc: "Membakar lemak lengan dan mengencangkan otot tricep/bicep.",
+        title: "Tight Duo - Arms",
+        desc: "Burns arm fat and tones tricep/bicep muscles.",
         price: "Rp 238.000",
       },
       {
-        title: "Tight Duo - Calf (Betis)",
-        desc: "Solusi untuk betis lebih kencang dan ramping.",
+        title: "Tight Duo - Calf",
+        desc: "Solution for firmer and slimmer calves.",
         price: "Rp 238.000",
       },
 
       // --- V-Face Contour RF ---
       {
         title: "V-Face Contour - Face Only",
-        desc: "Mengencangkan kulit wajah dan mengurangi pipi tembam untuk efek V-Shape alami.",
+        desc: "Tightens facial skin and reduces chubby cheeks for a natural V-shape effect.",
         price: "Rp 178.000",
       },
       {
         title: "V-Face Contour - Neck Only",
-        desc: "Mengurangi kerutan dan garis halus pada leher.",
+        desc: "Reduces wrinkles and fine lines on the neck.",
         price: "Rp 178.000",
       },
       {
         title: "V-Face Contour - Face & Neck",
-        desc: "Paket lengkap pengencangan wajah dan leher untuk tampilan lebih muda.",
+        desc: "Complete face and neck tightening package for a more youthful appearance.",
         price: "Rp 278.000",
       },
     ],
@@ -676,69 +673,71 @@ export const SERVICES_DATA = [
     id: "13",
     slug: "lightpulse-i2pl",
     title: "Lightpulse I2PL Treatments",
-    shortDesc: "Teknologi cahaya canggih untuk jerawat, pencerahan, dan hair removal.",
-    fullDesc: "Perawatan dengan teknologi I2PL canggih untuk membantu mengurangi bulu halus, meredakan jerawat aktif, meratakan warna kulit, serta memberikan kilau cerah alami pada wajah dan tubuh.",
-    image: lightPulse, // Ganti dengan gambar laser/I2PL yang sesuai
+    shortDesc:
+      "Advanced light technology for acne, brightening, and hair removal.",
+    fullDesc:
+      "A treatment using radiofrequency (RF) technology to tighten the skin, sculpt facial and body contours, and help reduce fat in specific areas non-invasively with no downtime.",
+    image: lightPulse,
     icon: <Sparkles size={24} />,
     pricing: [
       // --- ACNE & REJUVENATION ---
       {
         title: "LightPulse Acne Clear",
-        desc: "Membantu menekan bakteri penyebab jerawat dan mengurangi peradangan agar kulit lebih bersih dan tenang.",
-        price: "Rp 378.000"
+        desc: "Helps suppress acne-causing bacteria and reduce inflammation for clearer and calmer skin.",
+        price: "Rp 378.000",
       },
       {
         title: "Dual Tone Rejuvenation (Face/Neck)",
-        desc: "Menyamarkan warna kulit tidak merata, mengurangi kusam, dan mengembalikan kilau alami.",
-        price: "Rp 428.000"
+        desc: "Helps even out skin tone, reduce dullness, and restore the skin’s natural glow.",
+        price: "Rp 428.000",
       },
       {
         title: "Dual Tone Rejuvenation (Underarms)",
-        desc: "Khusus area ketiak untuk mencerahkan dan meratakan warna kulit.",
-        price: "Rp 288.000"
+        desc: "Specially designed for underarm areas to brighten and even out skin tone.",
+        price: "Rp 288.000",
       },
       {
         title: "InstaGlow Radiance (Face)",
-        desc: "Meningkatkan kecerahan dan kilau kulit wajah secara langsung.",
-        price: "Rp 428.000"
+        desc: "Enhances facial brightness and delivers an instant radiant glow.",
+        price: "Rp 428.000",
       },
       {
         title: "InstaGlow Radiance (Body Medium)",
-        desc: "Perawatan pencerahan instan untuk area tubuh ukuran sedang.",
-        price: "Rp 578.000"
+        desc: "Instant brightening treatment for medium-sized body areas.",
+        price: "Rp 578.000",
       },
       {
         title: "InstaGlow Radiance (Body Large)",
-        desc: "Perawatan pencerahan instan untuk area tubuh ukuran besar.",
-        price: "Rp 828.000"
+        desc: "Instant brightening treatment for large body areas.",
+        price: "Rp 828.000",
       },
 
       // --- HAIR REMOVAL ---
       {
         title: "Hair Removal - Underarms",
-        desc: "Menghilangkan bulu ketiak sekaligus membantu mencerahkan area kulit.",
-        price: "Rp 278.000"
+        desc: "Removes underarm hair while helping to brighten the skin.",
+        price: "Rp 278.000",
       },
       {
         title: "Hair Removal - Lower Arms",
-        desc: "Membuat kulit lengan bawah lebih halus, bersih, dan bebas bulu.",
-        price: "Rp 378.000"
+        desc: "Leaves lower arm skin smoother, cleaner, and hair-free.",
+        price: "Rp 378.000",
       },
       {
         title: "Hair Removal - Lower Legs",
-        desc: "Menghilangkan bulu kaki dengan hasil halus dan merata.",
-        price: "Rp 478.000"
+        desc: "Removes leg hair with smooth and even results.",
+        price: "Rp 478.000",
       },
       {
         title: "Hair Removal - Bikini Lines",
-        desc: "Menghilangkan bulu di area bikini dengan aman dan nyaman.",
-        price: "Rp 378.000"
+        desc: "Safely and comfortably removes hair in the bikini line area.",
+        price: "Rp 378.000",
       },
       {
         title: "Hair Removal - Brazilian",
-        desc: "Menghilangkan bulu sepenuhnya di area intim untuk hasil bersih maksimal.",
-        price: "Rp 478.000"
-      }
-    ]
+        desc: "Completely removes hair in intimate areas for maximum cleanliness.",
+        price: "Rp 478.000",
+      },
+    ],
   },
 ];

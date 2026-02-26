@@ -7,7 +7,7 @@ import logoImage from "../assets/Logo2.png";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  
+
   // 2. Inisialisasi useLocation untuk mengambil path URL saat ini
   const location = useLocation();
 
@@ -59,22 +59,19 @@ const Navbar = () => {
           {/* 2. MENU DESKTOP */}
           <div className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest">
             {/* Gunakan isActive untuk mengubah warna teks jika sedang di halaman tersebut */}
-            <Link 
-              to="/" 
-              className={`${isActive("/") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}
-            >
+            <Link
+              to="/"
+              className={`${isActive("/") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}>
               Home
             </Link>
-            <Link 
-              to="/konsultasi" 
-              className={`${isActive("/konsultasi") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}
-            >
+            <Link
+              to="/konsultasi"
+              className={`${isActive("/konsultasi") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}>
               Consultation
             </Link>
-            <Link 
-              to="/about" 
-              className={`${isActive("/about") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}
-            >
+            <Link
+              to="/about"
+              className={`${isActive("/about") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}>
               About
             </Link>
           </div>
@@ -105,8 +102,7 @@ const Navbar = () => {
                   // Terapkan hal yang sama untuk versi mobile, bisa ditambah scale-110 juga jika aktif
                   className={`${
                     isActive(path) ? "text-white scale-110" : "text-[#FAE3C3]"
-                  } hover:text-white transition-transform hover:scale-110`}
-                >
+                  } hover:text-white transition-transform hover:scale-110`}>
                   {item}
                 </Link>
               );
