@@ -7,7 +7,7 @@ import { SERVICES_DATA } from "../data/services"; // Import data terpusat
 const Consultation = () => {
   return (
     // CONTAINER UTAMA (Scroll Biasa)
-    <div className="min-h-screen w-full bg-[#FAE3C3]">
+    <div className="min-h-screen w-full bg-[#FAE3C3]/60">
       {/* SECTION 1: HERO */}
       <section className="min-h-[100vh] w-full bg-[#15503E] text-[#FAE3C3] flex items-center justify-center relative overflow-hidden py-24 md:py-32 px-6">
         <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#FAE3C3]/5 rounded-full blur-[100px]"></div>

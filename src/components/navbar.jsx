@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom"; // 1. Import useLocation
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-// 1. IMPORT LOGO
 import logoImage from "../assets/Logo2.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  // 2. Inisialisasi useLocation untuk mengambil path URL saat ini
   const location = useLocation();
-
-  // 3. Fungsi pembantu untuk cek apakah path sesuai dengan URL saat ini
   const isActive = (path) => location.pathname === path;
 
   // Logic Scroll
@@ -36,10 +32,11 @@ const Navbar = () => {
             : "bg-[#15503E] border-transparent py-2"
         }`}>
         <div className="container mx-auto px-6 md:px-12 lg:px-24 flex justify-between items-center text-[#FAE3C3]">
-          {/* 1. LOGO */}
+          
+          {/* 1. LOGO & TEKS */}
           <Link
             to="/"
-            className="z-50 relative flex items-center"
+            className="z-50 relative flex items-center gap-3"
             onClick={() => setIsOpen(false)}>
             <div
               className="bg-[#FAE3C3] h-12 w-12"
@@ -54,11 +51,15 @@ const Navbar = () => {
                 WebkitMaskPosition: "center left",
               }}
             />
+            {/* Wrapper Teks Atas-Bawah (Sudah Dikecilkan) */}
+            <div className="flex flex-col justify-center font-playfair font-bold tracking-widest text-[#FAE3C3]">
+              <span className="text-lg md:text-xs leading-none mb-0.5">Aldiora</span>
+              <span className="text-[10px] md:text-xs leading-none">Clinic</span>
+            </div>
           </Link>
 
           {/* 2. MENU DESKTOP */}
           <div className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest">
-            {/* Gunakan isActive untuk mengubah warna teks jika sedang di halaman tersebut */}
             <Link
               to="/"
               className={`${isActive("/") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}>
@@ -91,15 +92,13 @@ const Navbar = () => {
                 : "-translate-y-full opacity-0"
             }`}
             style={{ top: "0", left: "0", height: "100vh", width: "100%" }}>
-            {/* Link Menu Mobile */}
-            {["Home", "Konsultasi", "About"].map((item) => {
+            {["Home", "Consultation", "About"].map((item) => {
               const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
               return (
                 <Link
                   key={item}
                   to={path}
                   onClick={() => setIsOpen(false)}
-                  // Terapkan hal yang sama untuk versi mobile, bisa ditambah scale-110 juga jika aktif
                   className={`${
                     isActive(path) ? "text-white scale-110" : "text-[#FAE3C3]"
                   } hover:text-white transition-transform hover:scale-110`}>
