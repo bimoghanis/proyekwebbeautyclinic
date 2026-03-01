@@ -92,7 +92,7 @@ const Navbar = () => {
             }`}
             style={{ top: "0", left: "0", height: "100vh", width: "100%" }}>
             {/* Link Menu Mobile */}
-            {["Home", "Konsultasi", "About"].map((item) => {
+            {["Home", "Consultation", "About"].map((item) => {
               const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
               return (
                 <Link
