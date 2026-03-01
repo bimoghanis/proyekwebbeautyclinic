@@ -30,14 +30,15 @@ const Navbar = () => {
           isScrolled
             ? "bg-[#15503E]/90 backdrop-blur-md border-white/10 py-1 shadow-lg"
             : "bg-[#15503E] border-transparent py-2"
-        }`}>
+        }`}
+      >
         <div className="container mx-auto px-6 md:px-12 lg:px-24 flex justify-between items-center text-[#FAE3C3]">
-          
           {/* 1. LOGO & TEKS */}
           <Link
             to="/"
             className="z-50 relative flex items-center gap-3"
-            onClick={() => setIsOpen(false)}>
+            onClick={() => setIsOpen(false)}
+          >
             <div
               className="bg-[#FAE3C3] h-12 w-12"
               style={{
@@ -53,8 +54,12 @@ const Navbar = () => {
             />
             {/* Wrapper Teks Atas-Bawah (Sudah Dikecilkan) */}
             <div className="flex flex-col justify-center font-playfair font-bold tracking-widest text-[#FAE3C3]">
-              <span className="text-lg md:text-xs leading-none mb-0.5">Aldiora</span>
-              <span className="text-[10px] md:text-xs leading-none">Clinic</span>
+              <span className="text-lg md:text-xs leading-none mb-0.5">
+                Aldiora
+              </span>
+              <span className="text-[10px] md:text-xs leading-none">
+                Clinic
+              </span>
             </div>
           </Link>
 
@@ -62,17 +67,20 @@ const Navbar = () => {
           <div className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest">
             <Link
               to="/"
-              className={`${isActive("/") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}>
+              className={`${isActive("/") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}
+            >
               Home
             </Link>
             <Link
               to="/konsultasi"
-              className={`${isActive("/konsultasi") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}>
+              className={`${isActive("/konsultasi") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}
+            >
               Consultation
             </Link>
             <Link
               to="/about"
-              className={`${isActive("/about") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}>
+              className={`${isActive("/about") ? "text-white" : "text-[#FAE3C3]"} hover:text-white transition`}
+            >
               About
             </Link>
           </div>
@@ -80,7 +88,8 @@ const Navbar = () => {
           {/* 3. TOMBOL HAMBURGER */}
           <button
             className="md:hidden z-50 text-[#FAE3C3] focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}>
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
 
@@ -91,7 +100,8 @@ const Navbar = () => {
                 ? "translate-y-0 opacity-100"
                 : "-translate-y-full opacity-0"
             }`}
-            style={{ top: "0", left: "0", height: "100vh", width: "100%" }}>
+            style={{ top: "0", left: "0", height: "100vh", width: "100%" }}
+          >
             {["Home", "Consultation", "About"].map((item) => {
               const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
               return (
@@ -101,7 +111,8 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                   className={`${
                     isActive(path) ? "text-white scale-110" : "text-[#FAE3C3]"
-                  } hover:text-white transition-transform hover:scale-110`}>
+                  } hover:text-white transition-transform hover:scale-110`}
+                >
                   {item}
                 </Link>
               );
