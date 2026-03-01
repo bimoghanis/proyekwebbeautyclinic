@@ -103,7 +103,10 @@ const Navbar = () => {
             style={{ top: "0", left: "0", height: "100vh", width: "100%" }}
           >
             {["Home", "Consultation", "About"].map((item) => {
-              const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
+              let path = "/";
+              if (item === "Consultation") path = "/konsultasi";
+              else if (item === "About") path = "/about";
+
               return (
                 <Link
                   key={item}
